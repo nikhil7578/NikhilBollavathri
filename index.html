@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nikhil Bollavathri – API Support Engineer</title>
+<meta name="description" content="Portfolio of Nikhil Bollavathri, API Support Engineer: production debugging, root cause analysis, and SQL.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@1,500&display=swap">
+<style>
+:root{--bg:#f6f3ee;--card:#fff;--text:#1a1a1a;--muted:#6b665f;--accent:#d4502a;--line:#ddd6cb;--glow:rgba(212,80,42,.18);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e10;--card:#151518;--text:#f1ece4;--muted:#9a968f;--accent:#e8603c;--line:#2a2a2f;--glow:rgba(232,96,60,.3)}}
+:root[data-theme="dark"]{--bg:#0e0e10;--card:#151518;--text:#f1ece4;--muted:#9a968f;--accent:#e8603c;--line:#2a2a2f;--glow:rgba(232,96,60,.3)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.7 "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+background-image:radial-gradient(ellipse at 50% 0,var(--glow),transparent 55%);background-repeat:no-repeat}
+main{max-width:820px;margin:0 auto;padding:18px 16px 40px}
+nav{display:flex;align-items:center;gap:22px;border:1px solid var(--line);border-radius:999px;padding:14px 22px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.logo{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-size:1.5rem;letter-spacing:.08em;color:var(--text)}
+.logo i{font-style:normal;color:var(--accent)}
+nav a{color:var(--muted);text-decoration:none;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.hero{text-align:center;padding:34px 0 10px}
+.badge{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#3aa57a}
+.badge::before{content:"";width:10px;height:10px;border-radius:50%;background:#3ecf8e}
+h1{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:clamp(2.6rem,12vw,5rem);line-height:1;margin:22px 0 10px;letter-spacing:.01em}
+.sub{font-family:"Playfair Display",Georgia,serif;font-style:italic;color:var(--accent);font-size:clamp(1.2rem,5vw,1.7rem);line-height:1.3;margin:0 0 18px}
+.lead{color:var(--muted);max-width:620px;margin:0 auto 22px}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:24px}
+.pills span{border:1px solid var(--line);border-radius:8px;padding:6px 14px;font-size:.85rem;background:var(--card)}
+.pills b{color:var(--accent);font-weight:400;margin-right:6px}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.btn{display:inline-block;text-decoration:none;border-radius:10px;padding:14px 26px;font:600 .95rem "JetBrains Mono",ui-monospace,monospace;border:1px solid var(--line);color:var(--text);background:var(--card)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 28px var(--glow)}
+.term{margin-top:34px;border:1px solid #2a2a2f;border-radius:18px;background:#0b0b0d;color:#e6e1d8;overflow:hidden;text-align:left}
+.tbar{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid #2a2a2f;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.tbar::-webkit-scrollbar{display:none}
+.dot{width:12px;height:12px;border-radius:50%;flex:none}
+.tbar button{font:inherit;font-size:.8rem;color:#8d8982;background:none;border:1px solid transparent;border-radius:6px;padding:5px 12px;cursor:pointer}
+.tbar button.on{color:#f1ece4;border-color:#6b3326;background:#2a1812}
+.tbody{padding:20px 18px;font-size:.85rem;min-height:170px}
+.tbody p{margin:0 0 4px}
+.cmd{color:#5bc0de}.info{color:#8d8982}.ok::before{content:"✔ ";color:#3ecf8e}
+.status{margin-top:12px;padding-top:12px;border-top:1px solid #2a2a2f;font-size:.8rem}
+.status em{font-style:normal;color:#e8603c}
+.cap{color:var(--muted);font-size:.72rem;margin:8px 4px 0;text-align:center}
+section{margin-top:44px}
+h2{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-weight:400;font-size:2rem;letter-spacing:.04em;margin:0 0 14px}
+h2 small{color:var(--accent);font:400 .8rem "JetBrains Mono",monospace;margin-right:10px;letter-spacing:.1em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.card h3{margin:0 0 8px;font-size:.85rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{border:1px solid var(--line);border-radius:6px;padding:2px 9px;font-size:.78rem}
+.job{margin-bottom:12px}
+.jh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px}
+.jh b{font-size:1rem}
+.when{color:var(--muted);font-size:.8rem}
+.co{color:var(--accent);margin:2px 0 8px;font-size:.85rem}
+ul{margin:0;padding-left:18px}
+li{margin-bottom:6px;font-size:.88rem}
+footer{margin-top:40px;text-align:center;color:var(--muted);font-size:.75rem}
+</style>
+</head>
+<body>
+<main>
+<nav>
+  <span class="logo">NIKHIL <i>.API</i></span>
+  <a href="#workflow">Workflow</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+  <span class="badge">Hyderabad, India · Entrata</span>
+  <h1>Nikhil Bollavathri</h1>
+  <p class="sub">API Support Engineer | Production Debugging &amp; Root Cause Analysis</p>
+  <p class="lead">3.5+ years in SaaS production support across 150+ enterprise APIs and about 10 vendors daily. I reproduce issues, trace them through logs and code, validate data with SQL, and hand Engineering clear evidence.</p>
+  <div class="pills"><span><b>01</b>API Support</span><span><b>02</b>Logs &amp; Monitoring</span><span><b>03</b>SQL</span><span><b>04</b>Incident Ownership</span><span><b>05</b>Python (fundamentals)</span></div>
+  <div class="btns"><a class="btn pri" href="#workflow">See My Workflow ↓</a><a class="btn" href="mailto:nikhilkumar7578@gmail.com">Email ↗</a></div>
+</div>
+
+<div class="term" id="workflow">
+  <div class="tbar">
+    <span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span>
+    <button class="on" data-t="0">Reproduce</button><button data-t="1">Trace</button><button data-t="2">Validate</button><button data-t="3">Hand off</button>
+  </div>
+  <div class="tbody">
+    <div data-p="0"><p class="cmd">$ postman replay --request failing-call</p><p class="info">[INFO] Confirming the issue with the exact request...</p><p class="ok">Same request replayed</p><p class="ok">Response and status captured</p><p class="ok">Issue confirmed or ruled out</p></div>
+    <div data-p="1" hidden><p class="cmd">$ trace --layers app,gateway,network,vendor</p><p class="info">[INFO] Narrowing down where it fails...</p><p class="ok">Application and server logs</p><p class="ok">Gateway logs (Gravitee)</p><p class="ok">Errors and traces (New Relic)</p></div>
+    <div data-p="2" hidden><p class="cmd">$ sql --validate records-behind-the-call</p><p class="info">[INFO] Checking the data behind the behavior...</p><p class="ok">Records checked in SSMS</p><p class="ok">Discrepancies spotted</p><p class="ok">Code path traced with AI-assisted tools</p></div>
+    <div data-p="3" hidden><p class="cmd">$ jira create --bug --with-evidence</p><p class="info">[INFO] Packaging findings for Engineering...</p><p class="ok">Reproduction steps</p><p class="ok">Technical findings and suggested fix</p><p class="ok">Fix verified before closing with the customer</p></div>
+    <div class="status">STATUS: <em>Root cause isolated</em> · Evidence handed off</div>
+  </div>
+</div>
+<p class="cap">Illustrative workflow, not real output.</p>
+
+<section id="skills">
+  <h2><small>01</small>Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>APIs &amp; Web</h3><div class="tags"><span>REST</span><span>JSON</span><span>gRPC</span><span>Integration</span><span>API testing</span><span>Auth</span><span>Rate limiting</span></div></div>
+    <div class="card"><h3>Debugging</h3><div class="tags"><span>Postman</span><span>Gravitee</span><span>New Relic</span><span>Server logs</span><span>Gateway logs</span></div></div>
+    <div class="card"><h3>Data</h3><div class="tags"><span>SQL</span><span>PL/SQL</span><span>SSMS</span><span>Data validation</span></div></div>
+    <div class="card"><h3>Code &amp; Tools</h3><div class="tags"><span>Python (fundamentals)</span><span>Git</span><span>Jira</span><span>Cursor IDE</span><span>Codex</span><span>Linux</span></div></div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2><small>02</small>Experience</h2>
+  <div class="card job">
+    <div class="jh"><b>API Support Engineer</b><span class="when">June 2025 – Present</span></div>
+    <p class="co">Entrata · Pune</p>
+    <ul>
+      <li>Support 150+ enterprise APIs for about 10 third-party vendors daily, from onboarding through production issues.</li>
+      <li>Own production incidents through resolution; run root cause analysis with server logs, gateway logs, Gravitee, New Relic, and SQL.</li>
+      <li>Reproduce reported issues (authentication, timeouts, latency, rate limiting, data discrepancies) and triage Jira tickets to confirm valid defects.</li>
+      <li>Trace defects through the code with AI-assisted tools and recommend fixes to Engineering in detailed bug reports.</li>
+      <li>Verify new release features with Engineering and Product, and submit feature requests on behalf of vendors.</li>
+      <li>Maintain API documentation and mentor new team members.</li>
+    </ul>
+  </div>
+  <div class="card job">
+    <div class="jh"><b>Analyst – Technical Support</b><span class="when">Aug 2022 – Dec 2024</span></div>
+    <p class="co">Teleperformance Global Services · Hyderabad</p>
+    <ul>
+      <li>Investigated customer-reported application issues using backend techniques and SQL.</li>
+      <li>Analyzed logs, validated data, and logged Jira tickets with reproduction steps and evidence.</li>
+      <li>Worked with cross-functional teams on production incidents and documented known workarounds.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <h2><small>03</small>Education &amp; Contact</h2>
+  <div class="grid">
+    <div class="card"><h3>Education</h3><b>B.Tech, Mechanical Engineering</b><br><span class="when">TKR College of Engineering &amp; Technology · August 2021</span></div>
+    <div class="card"><h3>Contact</h3><a class="btn pri" style="padding:10px 16px;font-size:.8rem" href="mailto:nikhilkumar7578@gmail.com">nikhilkumar7578@gmail.com</a><p class="when" style="margin:10px 0 0">English, Telugu, Hindi</p></div>
+  </div>
+</section>
+<footer>© Nikhil Bollavathri</footer>
+</main>
+<script>
+var b=document.querySelectorAll("[data-t]"),p=document.querySelectorAll("[data-p]");
+b.forEach(function(x){x.addEventListener("click",function(){var i=x.getAttribute("data-t");
+b.forEach(function(y){y.classList.toggle("on",y===x)});
+p.forEach(function(z){z.hidden=z.getAttribute("data-p")!==i})})});
+</script>
+</body>
+</html>
