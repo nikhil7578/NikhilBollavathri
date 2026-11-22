@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nikhil Bollavathri – API Support Engineer</title>
+<meta name="description" content="Interactive portfolio of Nikhil Bollavathri, API Support Engineer: production debugging, root cause analysis, and SQL.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f3ee;--navbg:rgba(246,243,238,.88);--panel:#fff;--text:#1a1a1a;--muted:#6b665f;--acc:#e8541f;--line:#ddd6cb;--glow:rgba(232,84,31,.14);--bad:#c92a2a;--good:#2b8a3e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e10;--navbg:rgba(14,14,16,.88);--panel:#151518;--text:#f1ece4;--muted:#9a968f;--acc:#ff6c37;--line:#2a2a2f;--glow:rgba(255,108,55,.2);--bad:#ff7b72;--good:#3ecf8e}}
+:root[data-theme="dark"]{--bg:#0e0e10;--navbg:rgba(14,14,16,.88);--panel:#151518;--text:#f1ece4;--muted:#9a968f;--acc:#ff6c37;--line:#2a2a2f;--glow:rgba(255,108,55,.2);--bad:#ff7b72;--good:#3ecf8e}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.7 "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navbg);backdrop-filter:blur(12px);z-index:20}
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(circle 320px at var(--mx,50%) var(--my,15%),var(--glow),transparent)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:21;display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--navbg);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .logo{font-family:"Bebas Neue",Impact,sans-serif;font-size:1.45rem;letter-spacing:.08em;margin-right:auto;white-space:nowrap}
+nav .logo i{font-style:normal;color:var(--acc)}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}.links::-webkit-scrollbar{display:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:8px;white-space:nowrap}
+nav a.on{color:var(--text);background:var(--line)}
+.icon{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:999px;padding:5px 12px;font:inherit;font-size:.75rem;cursor:pointer}
+#pb{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--acc)}
+main{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 16px 60px}
+section{padding-top:64px}
+h1,h2{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;font-weight:400;margin:0}
+h1{font-size:clamp(2.8rem,13vw,5.2rem);line-height:1;margin:18px 0 10px}
+h2{font-size:2.1rem;letter-spacing:.03em;margin-bottom:6px}
+.lbl{color:var(--acc);font-size:.75rem;letter-spacing:.16em}
+.hero{padding-top:56px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--good)}
+.badge::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--good);animation:pu 2s infinite}
+@keyframes pu{50%{opacity:.35}}
+.type{font-size:clamp(1rem,4vw,1.25rem);min-height:3.2em;margin:0 0 14px}
+.type b{color:var(--acc);font-weight:600}
+.caret{display:inline-block;width:8px;height:1.1em;background:var(--acc);vertical-align:-.15em;margin-left:2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:18px 0 26px}
+.btn{display:inline-block;text-decoration:none;border:1px solid var(--line);color:var(--text);background:var(--panel);border-radius:10px;padding:13px 24px;font:600 .9rem "JetBrains Mono",monospace;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 8px 26px var(--glow)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--acc)}
+.stat b{display:block;font-size:1.7rem;color:var(--acc)}.stat span{font-size:.74rem;color:var(--muted)}
+.rv{opacity:1}.js .rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}.js .rv.in{opacity:1;transform:none}
+.journey{position:relative;display:flex;align-items:center;margin:16px 0 6px}.track{position:relative;height:16px;margin-bottom:12px;border-bottom:2px dashed var(--line)}.pkt{position:absolute;top:0;left:20px;width:14px;height:14px;border-radius:50%;background:var(--acc);box-shadow:0 0 14px var(--acc);transition:left .6s ease,background .3s}.pkt.good{background:var(--good);box-shadow:0 0 14px var(--good)}.pkt.bad{background:var(--bad);box-shadow:0 0 14px var(--bad)}.journey .node.bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.node{flex:none;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:12px;padding:12px 10px;font:inherit;font-size:.8rem;cursor:pointer;transition:all .25s}
+.node.on{background:var(--acc);border-color:var(--acc);color:#fff;transform:scale(1.07)}
+.ln{flex:1;height:2px;background:var(--line);position:relative}.ln::after{content:"";position:absolute;inset:0;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .5s}.ln.lit::after{transform:scaleX(1)}
+.det{border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.88rem;min-height:74px;background:var(--panel)}.det b{color:var(--acc)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 13px;font:inherit;font-size:.82rem;cursor:pointer;transition:all .2s}
+.chip:hover,.chip.on{border-color:var(--acc);color:var(--acc)}.chip.py{border-style:dashed}
+.job{margin-bottom:12px;padding:0}.job .jh{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:16px 18px;cursor:pointer}
+.job small,.when{color:var(--muted);font-size:.78rem}
+.jb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s}.job.open .jb{grid-template-rows:1fr}.jb>div{overflow:hidden}
+.jb ul{margin:0;padding:0 18px 14px 36px;font-size:.88rem}.jb li{margin-bottom:6px}
+.q{margin:0 0 12px}.prog{height:6px;border-radius:6px;background:var(--line);margin-bottom:14px;overflow:hidden}.prog i{display:block;height:100%;width:0;background:var(--acc);transition:width .4s}
+.opt{display:block;width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:11px 14px;margin-bottom:8px;font:inherit;font-size:.85rem;cursor:pointer;transition:all .2s}
+.opt:hover:not(:disabled){border-color:var(--acc);transform:translateX(4px)}
+.fb{font-size:.85rem;margin:8px 0 0;min-height:1.4em}.fb.bad{color:var(--bad)}.fb.good{color:var(--good)}
+.note{color:var(--muted);font-size:.72rem;margin-top:10px}
+.fxh{margin-bottom:12px;color:var(--muted)}.fxh b{color:var(--acc);font-size:1.5rem}
+.fix{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px;font-size:.88rem;background:var(--panel)}
+.fxt{display:flex;justify-content:space-between;margin-bottom:4px}.bd{font-size:.72rem;border:1px solid var(--line);border-radius:5px;padding:1px 8px}.bd.merged{color:var(--good);border-color:var(--good)}.fxs{color:var(--muted);margin-top:6px}.fix a{color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+#tt{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:22;width:44px;height:44px;border-radius:50%;border:0;background:var(--acc);color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s}
+#tt.show{opacity:1;pointer-events:auto}
+#toast{position:fixed;left:50%;bottom:calc(70px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:9px 16px;border-radius:10px;font-size:.8rem;opacity:0;transition:all .3s;z-index:23;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%)}
+footer{text-align:center;color:var(--muted);font-size:.75rem;margin-top:56px}
+.lead{color:var(--muted);max-width:640px;margin:0 auto 6px}.cs{padding:0 18px 16px;font-size:.88rem}.cs p{margin:0 0 8px}.cs ol{margin:0 0 10px;padding-left:18px}.cs li{margin-bottom:5px}.cs b{color:var(--acc)}.cs table{border-collapse:collapse;width:100%;margin:0 0 10px;font-size:.8rem}.cs td,.cs th{border:1px solid var(--line);padding:5px 8px;text-align:left}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<nav>
+  <span class="logo">NIKHIL <i>.API</i></span>
+  <div class="links"><a href="#journey">Journey</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#fixes">Cases</a><a href="#debug">Debug</a><a href="#contact">Contact</a></div>
+  <button class="icon" id="theme">Theme</button>
+  <i id="pb"></i>
+</nav>
+<main>
+<section class="hero" id="top">
+  <span class="badge">Hyderabad, India · Entrata</span>
+  <h1>Nikhil Bollavathri</h1>
+  <p class="type"><b>API Support Engineer | Production Troubleshooting | API Integrations</b><br>I <span id="typed"></span><span class="caret"></span></p>
+  <p class="lead">I troubleshoot enterprise API integrations and resolve production issues across the gateway, application, and database layers. I use Postman, Gravitee, New Relic, SQL, and Python scripting to reproduce defects, find root causes, and work with Engineering on reliable fixes.</p>
+  <div class="btns"><a class="btn pri" href="#debug">Try my investigation ↓</a><a class="btn" href="#contact">Get in touch ↗</a></div>
+  <div class="stats">
+    <div class="card stat"><b data-to="3.5" data-dec="1" data-suf="+">3.5+</b><span>years in SaaS support</span></div>
+    <div class="card stat"><b data-to="150" data-suf="+">150+</b><span>enterprise APIs</span></div>
+    <div class="card stat"><b data-to="10" data-pre="~">~10</b><span>vendors daily</span></div>
+  </div>
+</section>
+
+<section id="journey" class="rv">
+  <div class="lbl">01 / JOURNEY</div><h2>Follow a request</h2>
+  <p class="note" style="margin:0">Pick an outcome and watch the request travel. Tap a stop to see what I check there.</p>
+  <div class="journey"><button class="node on">Vendor</button><i class="ln"></i><button class="node">Gateway</button><i class="ln"></i><button class="node">App</button><i class="ln"></i><button class="node">Database</button></div>
+  <div class="track"><i class="pkt" id="pkt"></i></div>
+  <div class="det" id="jdet"></div>
+  <div class="row"><button class="chip" data-fly="0">200 OK</button><button class="chip" data-fly="1">429 Throttled</button><button class="chip" data-fly="2">500 Error</button><button class="chip" data-fly="3">Timeout</button></div>
+</section>
+
+<section id="skills" class="rv">
+  <div class="lbl">02 / SKILLS</div><h2>What I work with</h2>
+  <div class="row" id="cats"></div><div class="row" id="chips"></div><div class="det" id="sdet"></div>
+</section>
+
+<section id="experience">
+  <div class="lbl rv">03 / EXPERIENCE</div><h2 class="rv">Where I’ve worked</h2>
+  <div id="acc" style="margin-top:12px"></div>
+  <div class="card rv" style="margin-top:12px"><b>B.Tech, Mechanical Engineering</b><br><span class="when">TKR College of Engineering &amp; Technology · August 2021</span></div>
+</section>
+
+<section id="fixes" class="rv">
+  <div class="lbl">04 / CASE STUDIES</div><h2>Problems I’ve solved</h2>
+  <p class="note" style="margin:0">Anonymized and generalized. No vendor, customer, or internal system details.</p>
+  <div id="fx" style="margin-top:12px"></div>
+</section>
+
+<section id="debug" class="rv">
+  <div class="lbl">05 / DEBUG IT</div><h2>Investigate with me</h2>
+  <div class="prog"><i id="bar"></i></div>
+  <p class="q" id="q"></p><div id="opts"></div><p class="fb" id="fb"></p>
+  <p class="note">Simulated scenario. It shows how I work; it is not a real incident.</p>
+</section>
+
+<section id="contact" class="rv">
+  <div class="lbl">06 / CONTACT</div><h2>Let’s talk</h2>
+  <p style="margin:6px 0 14px">API support, integrations, or engineering roles.</p>
+  <div class="btns" style="justify-content:flex-start;margin:0"><a class="btn pri" href="mailto:nikhilkumar7578@gmail.com">Email me ↗</a><a class="btn" href="Nikhil_Bollavathri_Resume.pdf" download>Download resume ↓</a><a class="btn" href="https://github.com/nikhil7578" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://www.linkedin.com/in/nikhil-bollavathri" target="_blank" rel="noopener">LinkedIn ↗</a><button class="btn" id="copy">Copy email</button></div>
+  <p class="note">Hyderabad, India · English, Telugu, Hindi</p>
+</section>
+<footer>© Nikhil Bollavathri</footer>
+</main>
+<button id="tt" aria-label="Back to top">↑</button><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+document.documentElement.classList.add("js");
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const JN=[["Vendor","Reproduce the exact request in Postman and capture the response."],["Gateway","Gravitee gateway logs: did the request arrive, and what status did the gateway return?"],["App","New Relic errors and traces, plus server logs, show where inside the application it fails."],["Database","SQL in SSMS validates the records behind the response."]];
+const SK=[["APIs","REST and gRPC","Troubleshooting integrations built on REST, with gRPC alongside it."],["APIs","JSON","Reading and validating request and response payloads."],["APIs","Auth and rate limiting","Diagnosing authentication failures, throttling, and rate-limit behavior."],["APIs","API integration","Helping vendors onboard and fixing issues in their integrations."],["Debugging","Postman","Replaying a vendor’s exact request to reproduce an issue."],["Debugging","Gravitee","Gateway logs: did the request arrive, and what did the gateway return?"],["Debugging","New Relic","Application errors and traces to see where a request fails."],["Debugging","Server logs","Following a request through application and server logs."],["Data","SQL","Validating the records behind an API response."],["Data","PL/SQL","Using PL/SQL alongside SQL to investigate and validate data."],["Data","SSMS","Running queries to investigate data discrepancies."],["Code","Python scripting","Scripting to automate repetitive tasks."],["Code","Cursor IDE and Codex","AI-assisted code tracing to understand how a request is handled."],["Code","Git","Version control while reading and tracing code."],["Code","Jira","Triaging tickets and writing bug reports with reproduction steps."]];
+const JOBS=[{r:"API Support Engineer",c:"Entrata · Pune",p:"June 2025 – Present",h:["Support 150+ enterprise APIs for about 10 third-party vendors daily, from onboarding through production issues.","Own production incidents through resolution; run root cause analysis with server logs, gateway logs, Gravitee, New Relic, and SQL.","Reproduce reported issues (authentication, timeouts, latency, rate limiting, data discrepancies) and triage Jira tickets to confirm valid defects.","Trace defects through the code with AI-assisted tools, ship minor fixes for faster resolution, and report larger defects to Engineering with detailed evidence.","Verify new release features with Engineering and Product, and submit feature requests on behalf of vendors.","Use Python scripting to automate repetitive tasks.","Maintain API documentation and mentor new team members."]},{r:"Analyst – Technical Support",c:"Teleperformance Global Services · Hyderabad",p:"Aug 2022 – Dec 2024",h:["Investigated customer-reported application issues using backend techniques and SQL.","Analyzed logs, validated data, and logged Jira tickets with reproduction steps and evidence.","Worked with cross-functional teams on production incidents while keeping customers updated.","Documented troubleshooting procedures, known issues, and workarounds for the team."]}];
+const STEPS=[{q:"A vendor reports intermittent 500 errors on one endpoint. What do you do first?",o:[["Escalate to Engineering right away",0,"Without evidence, Engineering has to redo the investigation. Reproduce it first."],["Replay the exact request in Postman",1,"Reproduced. Now you have a real request and response to work with."],["Ask the vendor to try again later",0,"That delays the fix and proves nothing."]]},{q:"Which layer do you check next?",o:[["Rewrite the endpoint code",0,"Too early. Find where it fails before touching code."],["Gateway logs in Gravitee",1,"The gateway shows whether the request arrived and what status it returned."],["Check the database",0,"Data checks matter, but locate the failing layer first."]]},{q:"The gateway passed the request through. Where now?",o:[["Application errors and traces in New Relic",1,"That shows where inside the application the request fails."],["Blame the vendor",0,"Not without evidence from the logs."],["Restart the services",0,"That hides the symptom and loses the evidence."]]},{q:"The errors only show up for some accounts. How do you confirm the pattern?",o:[["Guess based on the account names",0,"Guesses don’t survive a review."],["Query the records behind those accounts with SQL",1,"Data validation turns a hunch into evidence."],["Ignore it and close the ticket",0,"The root cause is still open."]]},{q:"You’ve found the cause. What’s the last step?",o:[["Close the ticket",0,"Engineering and the vendor still need the findings."],["Write a bug report with reproduction steps and evidence, then verify the fix before closing",1,"That’s the full loop: hand off with evidence, then confirm the fix works."],["Tell the vendor it’s fixed",0,"Verify the fix first."]]}];
+const FIXES=[
+/* Add one entry per real pull request, for example:
+{id:"FIX-001",api:"API area",title:"Short title",summary:"What was wrong and how it was fixed",status:"Merged",date:"Month 2026",url:""} */
+];
+let cat="APIs",sel=0,si=0,jt;
+/* typewriter */
+const PH=["reproduce production API issues.","trace them through logs and code.","validate the data with SQL.","own incidents until the fix is verified.","automate repetitive tasks with Python."];
+(()=>{const el=$("#typed");if(reduce){el.textContent=PH[0];return}let i=0,j=0,del=false;(function t(){const p=PH[i];el.textContent=p.slice(0,j);if(!del&&j===p.length){del=true;return setTimeout(t,1600)}if(del&&j===0){del=false;i=(i+1)%PH.length}j+=del?-1:1;setTimeout(t,del?25:55)})()})();
+/* journey */
+const nodes=$$(".node"),lns=$$(".ln");
+function jset(i){nodes.forEach((n,k)=>{n.classList.toggle("on",k===i);n.classList.remove("bad")});lns.forEach((l,k)=>l.classList.toggle("lit",k<i));$("#jdet").innerHTML="<b>"+JN[i][0]+"</b><br>"+JN[i][1]}
+nodes.forEach((n,k)=>n.onclick=()=>{clearTimeout(jt);pk.className="pkt";pk.style.left=cx(k)+"px";jset(k)});
+const pk=$("#pkt"),cx=k=>nodes[k].offsetLeft+nodes[k].offsetWidth/2-7;
+const FL=[{n:"200 OK",stop:3,ok:1,msg:"The request clears the gateway, the application reads the data from the database, and the response returns 200."},{n:"429 Throttled",stop:1,ok:0,msg:"The gateway rejects a burst of requests with 429 even though quota remains (case study 1)."},{n:"500 Error",stop:2,ok:0,msg:"The application fails on unexpected input, such as a null value, and returns 500 (case study 4)."},{n:"Timeout",stop:3,ok:0,msg:"A slow backend transaction outlasts the gateway timeout (case studies 2 and 3)."}];
+function fly(i){clearTimeout(jt);const s=FL[i];pk.className="pkt";let k=0;(function go(){jset(k);pk.style.left=cx(k)+"px";if(k<s.stop){k++;jt=setTimeout(go,reduce?0:700)}else jt=setTimeout(()=>{pk.classList.add(s.ok?"good":"bad");if(!s.ok)nodes[k].classList.add("bad");$("#jdet").innerHTML="<b>"+s.n+"</b><br>"+s.msg;if(s.ok)jt=setTimeout(()=>{pk.style.left=cx(0)+"px"},900)},reduce?0:650)})()}
+addEventListener("load",()=>{pk.style.left=cx(0)+"px"});jset(0);
+/* skills */
+function skills(){const cs=[...new Set(SK.map(s=>s[0]))],list=SK.filter(s=>s[0]===cat);if(sel>=list.length)sel=0;
+$("#cats").innerHTML=cs.map(c=>`<button class="chip${c===cat?" on":""}" data-cat="${c}">${c}</button>`).join("");
+$("#chips").innerHTML=list.map((s,i)=>`<button class="chip${i===sel?" on":""}" data-sk="${i}">${s[1]}</button>`).join("");
+$("#sdet").innerHTML="<b>"+list[sel][1]+"</b><br>"+list[sel][2]}
+skills();
+/* experience */
+$("#acc").innerHTML=JOBS.map((j,i)=>`<div class="card job rv${i?"":" open"}"><button class="jh" data-acc="1" aria-expanded="${i?"false":"true"}"><span><b>${j.r}</b><br><small>${j.c}</small></span><span class="when">${j.p}</span></button><div class="jb"><div><ul>${j.h.map(x=>"<li>"+x+"</li>").join("")}</ul></div></div></div>`).join("");
+/* fixes */
+(()=>{const m=FIXES.filter(f=>f.status==="Merged").length;
+$("#fx").innerHTML=FIXES.length?`<div class="fxh"><b>${m}</b> merged · ${FIXES.length-m} in review</div>`+FIXES.map(f=>`<div class="fix"><div class="fxt"><b>${esc(f.id)}</b><span class="bd ${f.status.toLowerCase()}">${esc(f.status)}</span></div><div>${esc(f.title)}</div><div class="note">${esc(f.api)} · ${esc(f.date)}</div><div class="fxs">${esc(f.summary)}</div>${f.url?`<a href="${f.url}">View pull request ↗</a>`:""}</div>`).join(""):'<div class="det">No entries yet. I’m starting to fix bugs in the APIs I support. Each pull request that gets merged will be logged here.</div>'})();
+/* case studies */
+const CASES=[
+{t:"API returning 429 with quota still available",c:"Rate limiting · Spike Arrest · HTTP 429 · Request throttling",p:"A vendor saw intermittent 429 Too Many Requests responses while the customer still had quota left.",s:["Checked the gateway logs to find the exact error and where the request was rejected.","Verified the remaining quota and the rate-limit headers.","Compared successful and failed requests to look for patterns.","Reviewed the gateway rate-limiting configuration and found a Spike Arrest setting of 200 ms, which allows about five requests per second.","Separated normal quota exhaustion from gateway-level burst throttling."],tl:"Gravitee, gateway logs, Postman",o:"The requests were rejected by gateway throttling, not by quota exhaustion, which explained the 429s. The findings could go to the gateway team to review the throttling configuration and the customer-facing error message."},
+{t:"Timeouts from a long-running backend transaction",c:"Gateway timeouts · Transaction duration · Log tracing",p:"A vendor saw API timeouts for one customer account while requests for other accounts succeeded. One transaction was taking about 20 minutes.",s:["Confirmed the timeout in the gateway logs.","Compared the affected account’s requests with successful ones.","Traced the request through the application logs.","Investigated the backend transaction and its execution time.","Checked whether data volume, processing logic, or account configuration was the cause.","Shared the findings with Engineering for deeper investigation."],tl:"Gravitee, New Relic, application logs, SQL, Postman",o:"Pinpointed a transaction running far beyond its expected processing time and handed Engineering the evidence to investigate further."},
+{t:"Timeout despite lower memory use",c:"Performance analysis · Gateway timeouts · Request comparison",p:"A request timed out even though it used far less memory than a successful one.",tb:[["Metric","Timed out","Succeeded"],["Database duration","528 ms","187 ms"],["Memory consumed","17 MB","48 MB"],["PHP peak memory","37 MB","110 MB"]],s:["Compared the gateway logs of both requests.","Checked database execution time: about three times slower in the failed request.","Compared memory use and PHP peak memory.","Recognized that 528 ms alone could not explain a gateway timeout lasting several seconds.","Identified what to check next: total request duration, downstream calls, application processing, and the gateway timeout configuration."],tl:"Gateway logs, New Relic, SQL, application logs",o:"Showed that memory was not the constraint and that the slower database call alone did not explain the timeout, which narrowed the investigation to total request time, downstream calls, and timeout settings."},
+{t:"500 error from null value handling",c:"Null handling · HTTP 500 · Code tracing · Minor fix",p:"An API request returned 500 Internal Server Error when one field had no value. A function returned null instead of the expected default of 0.",s:["Checked the gateway and application logs to find the exact error.","Reproduced it in Postman with the affected request.","Used Cursor to follow the code flow and find where the null value was passed.","Updated the logic to default to 0 when the value is missing.","Tested with both populated and missing values.","Raised a Pull Request for Engineering review."],tl:"Cursor IDE, Postman, application logs, Git, Jira",o:"The fix was tested with populated and missing values and submitted for Engineering review."}];
+$("#fx").innerHTML=CASES.map((c,i)=>`<div class="card job rv${i?"":" open"}"><button class="jh" data-acc="1" aria-expanded="${i?"false":"true"}"><span><b>${i+1}. ${c.t}</b><br><small>${c.c}</small></span></button><div class="jb"><div><div class="cs"><p><b>Problem.</b> ${c.p}</p>${c.tb?"<table>"+c.tb.map((r,k)=>"<tr>"+r.map(x=>(k?"<td>":"<th>")+x+(k?"</td>":"</th>")).join("")+"</tr>").join("")+"</table>":""}<p><b>Steps</b></p><ol>${c.s.map(x=>"<li>"+x+"</li>").join("")}</ol><p><b>Tools.</b> ${c.tl}</p><p><b>Outcome.</b> ${c.o}</p></div></div></div></div>`).join("");
+/* debug game */
+function step(){const d=STEPS[si];$("#bar").style.width=(si/STEPS.length*100)+"%";$("#fb").textContent="";$("#fb").className="fb";
+if(!d){$("#q").textContent="Resolved. Reproduce, locate the layer, validate the data, hand off with evidence, verify the fix. That’s how I work.";$("#opts").innerHTML='<button class="opt" data-restart="1">Run it again</button>';return}
+$("#q").textContent=d.q;$("#opts").innerHTML=d.o.map((o,i)=>`<button class="opt" data-opt="${i}">${o[0]}</button>`).join("")}
+step();
+/* clicks */
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2200)}
+document.addEventListener("click",e=>{const t=e.target.closest("button");if(!t)return;const d=t.dataset;
+if(t.id==="theme"){const r=document.documentElement,a=r.getAttribute("data-theme"),dk=a?a==="dark":matchMedia("(prefers-color-scheme: dark)").matches;r.setAttribute("data-theme",dk?"light":"dark")}
+else if(t.id==="copy"){navigator.clipboard.writeText("nikhilkumar7578@gmail.com").then(()=>toast("Email copied"),()=>toast("Copy unavailable, use the email button"))}
+else if(d.cat!==undefined){cat=d.cat;sel=0;skills()}
+else if(d.sk!==undefined){sel=+d.sk;skills()}
+else if(d.fly!==undefined){fly(+d.fly)}
+else if(d.acc!==undefined){t.setAttribute("aria-expanded",t.parentElement.classList.toggle("open"))}
+else if(d.restart!==undefined){si=0;step()}
+else if(d.opt!==undefined){const o=STEPS[si].o[+d.opt],f=$("#fb");f.textContent=o[2];f.className="fb "+(o[1]?"good":"bad");if(o[1]){$$(".opt").forEach(b=>b.disabled=true);setTimeout(()=>{si++;step()},reduce?0:1300)}}});
+/* page effects */
+addEventListener("pointermove",e=>{const s=document.documentElement.style;s.setProperty("--mx",e.clientX+"px");s.setProperty("--my",e.clientY+"px")});
+const pb=$("#pb"),tt=$("#tt");
+addEventListener("scroll",()=>{const h=document.documentElement.scrollHeight-innerHeight;pb.style.width=(h>0?scrollY/h*100:0)+"%";tt.classList.toggle("show",scrollY>500)},{passive:true});
+tt.onclick=()=>scrollTo({top:0,behavior:reduce?"auto":"smooth"});
+function count(el){const to=+el.dataset.to,dc=+(el.dataset.dec||0),pre=el.dataset.pre||"",suf=el.dataset.suf||"";if(reduce)return;const t0=performance.now();(function f(t){const p=Math.min((t-t0)/1200,1);el.textContent=pre+(to*(1-Math.pow(1-p,3))).toFixed(dc)+suf;if(p<1)requestAnimationFrame(f)})(t0)}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");if(e.target.dataset.to)count(e.target);io.unobserve(e.target)}}),{threshold:.12});
+$$(".rv,[data-to]").forEach(el=>io.observe(el));
+const links=$$("nav a"),sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+$$("section[id]").forEach(s=>sio.observe(s));
+</script>
+</body>
+</html>
