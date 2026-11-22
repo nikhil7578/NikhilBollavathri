@@ -10,7 +10,7 @@ I help third-party vendors integrate with and troubleshoot 150+ enterprise APIs.
 - Verifying new releases and raising vendor feature requests with Product
 
 ## Toolbox
-`Postman` · `Gravitee` · `New Relic` · `SQL (SSMS)` · `REST / JSON / gRPC` · `Python (fundamentals)` · `Git` · `Jira` · `Cursor IDE` · `Codex`
+`Postman` · `Gravitee` · `New Relic` · `SQL (SSMS)` · `REST / JSON / gRPC` · `Python ` · `Git` · `Jira` · `Cursor IDE` · `Codex`
 
 ## Currently
 - Building my Python skills to work closer to the codebase
@@ -18,4 +18,4 @@ I help third-party vendors integrate with and troubleshoot 150+ enterprise APIs.
 ## Contact
 - Email: nikhilkumar7578@gmail.com
 - LinkedIn: https://www.linkedin.com/in/nikhil-bollavathri
-- Portfolio: https://YOUR-USERNAME.github.io
+- Portfolio: https://nikhil7578.github.io
