@@ -4,432 +4,1268 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nikhil Bollavathri — API Support Engineer specializing in enterprise API integrations, production troubleshooting, Python scripting, SQL, and technical problem solving.">
-<meta name="theme-color" content="#10131b">
-<title>Nikhil Bollavathri | API Support & Engineering</title>
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="Portfolio of an API Support Engineer specializing in REST APIs, integrations, production troubleshooting, SQL, PL/SQL and Python scripting.">
+<title>Nikhil | API Support & Integration Engineer</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
- --bg:#0b1018;
- --panel:#121b28;
- --panel2:#172334;
- --text:#e8f0f8;
- --muted:#93a5ba;
- --line:#26384c;
- --accent:#42d9c8;
- --accent2:#6b9dff;
- --glow:rgba(66,217,200,.14);
- --good:#5de0a1;
+  --bg:#080d18;
+  --surface:#101827;
+  --surface2:#151f31;
+  --border:#25344a;
+  --text:#e8eef8;
+  --muted:#91a2b9;
+  --accent:#27dfbd;
+  --blue:#60a5fa;
+  --purple:#b49aff;
+  --orange:#f6b66b;
+  --danger:#fb7185;
+  --shadow:0 18px 55px rgba(0,0,0,.25);
 }
-:root[data-theme="light"] {
- --bg:#f2f6fa;
- --panel:#ffffff;
- --panel2:#eaf1f8;
- --text:#142337;
- --muted:#60748b;
- --line:#d7e1ec;
- --accent:#008f83;
- --accent2:#326cce;
- --glow:rgba(0,143,131,.1);
- --good:#168d5c;
+[data-theme="light"] {
+  --bg:#f4f7fb;
+  --surface:#ffffff;
+  --surface2:#edf2f8;
+  --border:#d9e2ee;
+  --text:#152338;
+  --muted:#607187;
+  --accent:#078e78;
+  --blue:#2877c9;
+  --purple:#8059ca;
+  --orange:#b66a15;
+  --danger:#d43d59;
+  --shadow:0 18px 45px rgba(20,40,70,.08);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{
- margin:0;background:var(--bg);color:var(--text);
- font:15px/1.7 "Space Grotesk",sans-serif;
- overflow-x:hidden;
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,sans-serif;
+  line-height:1.65;
+  overflow-x:hidden;
+  transition:background .25s,color .25s;
 }
-a{color:var(--accent);text-decoration:none}
-button{font:inherit}
-.wrap{width:min(1100px,calc(100% - 36px));margin:auto}
-nav{
- position:sticky;top:0;z-index:20;
- background:color-mix(in srgb,var(--bg) 88%,transparent);
- backdrop-filter:blur(16px);
- border-bottom:1px solid var(--line);
+a {color:inherit;text-decoration:none}
+button {font:inherit}
+button,a { -webkit-tap-highlight-color:transparent }
+.container {width:min(1120px,calc(100% - 40px));margin:auto}
+.mono {font-family:"DM Mono",monospace}
+h1,h2,h3,h4 {font-family:"Space Grotesk",sans-serif;line-height:1.2}
+h2 {font-size:clamp(1.8rem,4vw,2.5rem);margin:0 0 12px}
+p {color:var(--muted)}
+section {padding:95px 0;position:relative}
+.section-intro {max-width:680px;margin-bottom:35px}
+.eyebrow {
+  color:var(--accent);
+  font:500 12px "DM Mono",monospace;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:12px;
 }
-.navinner{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:15px}
-.logo{font-weight:700;font-size:1.1rem;letter-spacing:-.04em}
-.logo span{color:var(--accent)}
-.navlinks{display:flex;gap:20px;align-items:center}
-.navlinks a{font:11px "DM Mono",monospace;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.navlinks a:hover{color:var(--accent)}
-.theme{
- background:var(--panel);border:1px solid var(--line);color:var(--text);
- border-radius:9px;padding:8px 12px;cursor:pointer;
+.section-subtitle {max-width:650px;color:var(--muted)}
+.tag {
+  display:inline-flex;align-items:center;gap:7px;
+  padding:7px 11px;border:1px solid var(--border);
+  background:var(--surface2);border-radius:7px;
+  font:12px "DM Mono",monospace;color:var(--muted);
 }
-.hero{position:relative;padding:105px 0 75px;overflow:hidden;text-align:center}
-.eyebrow{
- color:var(--accent);font:12px "DM Mono",monospace;
- letter-spacing:.16em;text-transform:uppercase;
+.dot {width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+.btn {
+  border:1px solid var(--border);border-radius:8px;
+  padding:12px 17px;display:inline-flex;align-items:center;
+  justify-content:center;gap:8px;font-weight:600;
+  cursor:pointer;transition:.2s;background:var(--surface);
+  color:var(--text);
 }
-h1{
- font-size:clamp(2.8rem,8vw,5.6rem);
- line-height:1.04;letter-spacing:-.065em;margin:20px 0 14px;
+.btn:hover {transform:translateY(-2px);border-color:var(--accent)}
+.btn-primary {background:var(--accent);color:#041511;border-color:var(--accent)}
+.btn-primary:hover {background:#55ebd0}
+.btn-small {padding:8px 11px;font-size:12px}
+.card {
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:14px;box-shadow:var(--shadow);
 }
-.gradient{
- background:linear-gradient(100deg,var(--accent),var(--accent2));
- -webkit-background-clip:text;background-clip:text;color:transparent;
+.muted {color:var(--muted)}
+.grid {display:grid;gap:18px}
+.reveal {opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
+.reveal.visible {opacity:1;transform:none}
+
+/* Navigation */
+.nav {
+  height:70px;position:fixed;z-index:100;top:0;left:0;right:0;
+  background:color-mix(in srgb,var(--bg) 86%,transparent);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(16px);
 }
-.hero p{max-width:720px;margin:18px auto;color:var(--muted);font-size:1.08rem}
-.roles{color:var(--accent);font:13px "DM Mono",monospace;min-height:25px}
-.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:30px 0}
-.btn{
- display:inline-flex;align-items:center;justify-content:center;
- border:1px solid var(--line);background:var(--panel);
- color:var(--text);padding:12px 20px;border-radius:9px;
- font-weight:600;cursor:pointer;transition:.2s;
+.nav-inner {height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo {font:700 20px "Space Grotesk",sans-serif}
+.logo span {color:var(--accent)}
+.nav-links {display:flex;gap:23px;align-items:center}
+.nav-links a {font-size:13px;color:var(--muted);transition:.2s}
+.nav-links a:hover {color:var(--accent)}
+.nav-actions {display:flex;gap:10px;align-items:center}
+.icon-btn {
+  border:1px solid var(--border);background:var(--surface);
+  color:var(--text);border-radius:8px;width:37px;height:37px;
+  cursor:pointer;
 }
-.btn.primary{background:var(--accent);border-color:var(--accent);color:#061b19}
-.btn:hover{transform:translateY(-3px);border-color:var(--accent)}
-.stats{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:14px;max-width:720px;margin:42px auto 0;
+.menu-btn {display:none}
+
+/* Hero */
+.hero {
+  min-height:720px;padding:145px 0 80px;position:relative;
+  overflow:hidden;display:flex;align-items:center;
 }
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:20px}
-.stat strong{display:block;font-size:1.8rem;color:var(--accent)}
-.stat span{color:var(--muted);font:11px "DM Mono",monospace}
-section{padding:76px 0}
-.section-label{font:11px "DM Mono",monospace;color:var(--accent);letter-spacing:.16em}
-h2{font-size:clamp(2rem,5vw,3rem);letter-spacing:-.05em;margin:8px 0 12px}
-.sub{color:var(--muted);max-width:720px;margin:0 0 28px}
-.card{
- background:var(--panel);border:1px solid var(--line);
- border-radius:15px;padding:23px;transition:.25s;
+.hero-grid {
+  display:grid;grid-template-columns:1fr .85fr;
+  gap:45px;align-items:center;position:relative;z-index:2;
 }
-.card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
-.tag{
- border:1px solid var(--line);background:var(--panel2);
- border-radius:6px;padding:5px 10px;
- color:var(--muted);font:11px "DM Mono",monospace;
+.hero h1 {font-size:clamp(2.7rem,6vw,4.7rem);letter-spacing:-2px;margin:20px 0}
+.hero h1 span {color:var(--accent)}
+.hero-copy {max-width:590px;font-size:16px}
+.hero-actions {display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.hero-tags {display:flex;gap:9px;flex-wrap:wrap}
+.hero-visual {
+  min-height:385px;position:relative;display:grid;place-items:center;
 }
-.muted{color:var(--muted)}
-/* Animated request flow background */
-.flowbg{
- position:absolute;inset:0;pointer-events:none;opacity:.5;
- mask-image:linear-gradient(to bottom,transparent,black 20%,black 75%,transparent);
+.hero-orbit {
+  position:absolute;width:330px;height:330px;border-radius:50%;
+  border:1px solid color-mix(in srgb,var(--accent) 25%,transparent);
+  animation:orbit 24s linear infinite;
 }
-.flowbg svg{width:100%;height:100%}
-.flowline{fill:none;stroke:var(--accent);stroke-width:1.3;stroke-dasharray:7 12;animation:flow 5s linear infinite}
-.flowline.blue{stroke:var(--accent2);animation-duration:7s}
-.packet{fill:var(--accent);filter:drop-shadow(0 0 6px var(--accent))}
-@keyframes flow{to{stroke-dashoffset:-100}}
-.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 2.2s infinite}
-@keyframes pulse{50%{opacity:.3;transform:scale(1.3)}}
-.flowcontent{position:relative;z-index:1}
-/* Journey */
-.journey{
- display:grid;grid-template-columns:repeat(4,1fr);
- gap:12px;align-items:stretch;
+.hero-orbit:before,.hero-orbit:after {
+  content:"";position:absolute;width:9px;height:9px;
+  background:var(--accent);border-radius:50%;box-shadow:0 0 20px var(--accent);
 }
-.node{
- background:var(--panel);border:1px solid var(--line);
- border-radius:12px;padding:18px 10px;text-align:center;
- cursor:pointer;color:var(--text);transition:.2s;
+.hero-orbit:before {top:42px;left:45px}
+.hero-orbit:after {bottom:35px;right:55px;background:var(--blue)}
+@keyframes orbit {to{transform:rotate(360deg)}}
+.hero-core {
+  width:170px;height:170px;border:1px solid var(--accent);
+  border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,var(--surface)),var(--surface));
+  box-shadow:0 0 70px color-mix(in srgb,var(--accent) 15%,transparent);
+  text-align:center;z-index:2;
 }
-.node.active{border-color:var(--accent);box-shadow:0 0 22px var(--glow)}
-.node .symbol{font-size:1.7rem;display:block;margin-bottom:7px}
-.node strong{font-size:.9rem}
-.node small{display:block;color:var(--muted);font:10px "DM Mono",monospace;margin-top:5px}
-.detail{
- margin-top:15px;background:var(--panel);border:1px solid var(--line);
- border-radius:12px;padding:20px;min-height:100px;color:var(--muted)
+.hero-core strong {font:700 22px "Space Grotesk"}
+.hero-core small {font:11px "DM Mono",monospace;color:var(--accent)}
+.float-label {
+  position:absolute;background:var(--surface);border:1px solid var(--border);
+  border-radius:9px;padding:11px 14px;font:12px "DM Mono",monospace;
+  box-shadow:var(--shadow);z-index:3;
 }
-.detail strong{color:var(--accent)}
+.float-label.one {top:12%;left:0}
+.float-label.two {top:20%;right:0}
+.float-label.three {bottom:15%;left:0}
+.float-label.four {bottom:10%;right:0}
+.network-bg {position:absolute;inset:0;opacity:.3;pointer-events:none}
+.network-bg canvas {width:100%;height:100%}
+
+/* Architecture */
+.architecture {background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.arch-shell {padding:22px}
+.arch-top {display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:20px}
+.arch-status {font:11px "DM Mono",monospace;color:var(--accent)}
+.arch-flow {
+  display:grid;grid-template-columns:repeat(7,minmax(105px,1fr));
+  gap:10px;align-items:stretch;position:relative;
+}
+.arch-node {
+  position:relative;z-index:2;min-height:125px;padding:15px 9px;
+  border:1px solid var(--border);border-radius:11px;
+  background:var(--surface2);color:var(--text);cursor:pointer;
+  text-align:center;transition:.25s;display:flex;
+  flex-direction:column;align-items:center;justify-content:center;gap:8px;
+}
+.arch-node:hover {border-color:var(--accent);transform:translateY(-4px)}
+.arch-node.active {
+  border-color:var(--accent);
+  background:color-mix(in srgb,var(--accent) 12%,var(--surface2));
+  box-shadow:0 0 25px color-mix(in srgb,var(--accent) 12%,transparent);
+}
+.arch-icon {font-size:26px}
+.arch-node strong {font-size:12px}
+.arch-node small {font:10px "DM Mono",monospace;color:var(--muted)}
+.arch-node:after {
+  content:"";position:absolute;right:-11px;top:50%;
+  width:11px;border-top:2px solid var(--border);
+}
+.arch-node:last-child:after {display:none}
+.arch-detail {
+  margin-top:20px;padding:20px;background:var(--surface2);
+  border:1px solid var(--border);border-radius:10px;
+  display:grid;grid-template-columns:1fr 1fr;gap:20px;
+}
+.arch-detail h3 {margin:0 0 7px;font-size:18px}
+.arch-detail p {margin:0;font-size:13px}
+.arch-meta {display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.arch-meta span {font:10px "DM Mono",monospace;padding:6px 8px;border:1px solid var(--border);border-radius:5px;color:var(--muted)}
+.arch-controls {display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+.packet-track {height:7px;background:var(--surface2);border-radius:10px;overflow:hidden;margin-top:18px}
+.packet-progress {height:100%;width:0;background:var(--accent);transition:width .35s}
+.arch-explanation {font-size:12px;color:var(--muted);margin-top:13px}
+.mobile-flow {display:none}
+
+/* API Console */
+.console-grid {display:grid;grid-template-columns:.85fr 1.15fr;gap:20px}
+.console-panel {padding:21px}
+.panel-title {display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}
+.panel-title h3 {margin:0;font-size:16px}
+.field-label {display:block;font:11px "DM Mono",monospace;color:var(--muted);margin:15px 0 7px}
+select,input {
+  width:100%;padding:12px;border-radius:7px;
+  border:1px solid var(--border);background:var(--bg);
+  color:var(--text);outline:none;
+}
+select:focus,input:focus {border-color:var(--accent)}
+.request-line {display:flex;gap:8px}
+.request-line select {width:110px}
+.code-window {
+  background:#080e18;border:1px solid #26354b;
+  border-radius:9px;padding:16px;color:#b9d5ed;
+  font:12px/1.8 "DM Mono",monospace;overflow:auto;
+  min-height:180px;white-space:pre-wrap;word-break:break-word;
+}
+.console-output {display:grid;gap:12px}
+.response-head {display:flex;align-items:center;justify-content:space-between;gap:10px}
+.status-pill {font:11px "DM Mono",monospace;padding:6px 9px;border-radius:5px;background:#14372f;color:#5ce5b9}
+.status-pill.error {background:#401e2a;color:#ff8ca2}
+.metrics {display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.metric {padding:12px;background:var(--surface2);border-radius:8px}
+.metric small {display:block;color:var(--muted);font:10px "DM Mono",monospace}
+.metric strong {font:18px "Space Grotesk"}
+.console-log {font:11px "DM Mono",monospace;color:var(--muted);min-height:100px}
+.console-log div {padding:3px 0;border-bottom:1px solid var(--border)}
+.console-log .ok {color:var(--accent)}
+.console-log .bad {color:var(--danger)}
+
 /* Skills */
-.skillgroups{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.skillgroups h3{margin:0 0 8px;font-size:1rem}
-.skillgroups p{color:var(--muted);font-size:.9rem;margin:0}
+.skills-grid {grid-template-columns:repeat(3,1fr)}
+.skill-card {padding:22px}
+.skill-card h3 {font-size:16px;margin:0 0 14px}
+.skill-list {display:flex;flex-wrap:wrap;gap:8px}
+.skill-list span {font-size:12px;background:var(--surface2);border:1px solid var(--border);padding:7px 10px;border-radius:6px;color:var(--muted)}
+
 /* Experience */
-.timeline{display:grid;gap:16px}
-.jobhead{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.jobhead h3{margin:0;font-size:1.15rem}
-.jobhead small{color:var(--accent);font:11px "DM Mono",monospace}
-ul{padding-left:20px}
-li{margin:7px 0;color:var(--muted)}
+.timeline {position:relative;max-width:850px;margin:35px auto 0}
+.timeline:before {content:"";position:absolute;left:12px;top:10px;bottom:10px;width:1px;background:var(--border)}
+.timeline-item {position:relative;padding:0 0 30px 42px}
+.timeline-dot {position:absolute;left:5px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.experience-card {padding:23px}
+.experience-head {display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.experience-head h3 {margin:0;font-size:19px}
+.experience-head small {font:11px "DM Mono",monospace;color:var(--accent)}
+.experience-card ul {padding-left:18px;color:var(--muted);font-size:13px}
+.experience-card li {margin:8px 0}
+
 /* Case studies */
-.case{padding:0;overflow:hidden}
-.case summary{
- cursor:pointer;list-style:none;padding:22px;
- display:flex;align-items:center;justify-content:space-between;gap:12px;
+.case-grid {grid-template-columns:repeat(2,1fr)}
+.case-card {padding:22px;transition:.25s}
+.case-card:hover {transform:translateY(-4px);border-color:var(--accent)}
+.case-number {font:11px "DM Mono",monospace;color:var(--accent)}
+.case-card h3 {font-size:19px;margin:12px 0}
+.case-card p {font-size:13px}
+.case-card details {margin-top:16px;border-top:1px solid var(--border);padding-top:12px}
+.case-card summary {cursor:pointer;color:var(--accent);font-size:13px;font-weight:600}
+.case-detail {padding-top:12px;font-size:13px;color:var(--muted)}
+.case-detail strong {color:var(--text)}
+.case-detail p {margin:8px 0}
+.case-tags {display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.case-tags span {font:10px "DM Mono",monospace;padding:5px 7px;border:1px solid var(--border);border-radius:5px}
+
+/* About */
+.about-grid {display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.about-card {padding:25px}
+.about-card p {font-size:14px}
+.education-item {padding:15px 0;border-bottom:1px solid var(--border)}
+.education-item:last-child {border:0}
+.education-item strong {display:block;font-size:14px}
+.education-item small {color:var(--muted);font-size:12px}
+
+/* Contact */
+.contact-box {padding:45px;text-align:center;max-width:760px;margin:auto}
+.contact-box h2 {font-size:clamp(2rem,5vw,3rem)}
+.contact-links {display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+footer {border-top:1px solid var(--border);padding:25px 0;color:var(--muted);font-size:12px}
+.footer-inner {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Background data flow */
+.flow-decoration {position:absolute;inset:0;pointer-events:none;overflow:hidden;opacity:.22}
+.flow-line {
+  position:absolute;height:1px;width:55%;left:-60%;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  animation:flowline 9s linear infinite;
 }
-.case summary::-webkit-details-marker{display:none}
-.case summary h3{font-size:1.08rem;margin:0}
-.case summary span{color:var(--accent);font:11px "DM Mono",monospace}
-.case summary:after{content:"+";font-size:1.4rem;color:var(--accent)}
-.case[open] summary:after{content:"−"}
-.casebody{border-top:1px solid var(--line);padding:5px 22px 22px}
-.casebody h4{font-size:.9rem;color:var(--accent);margin:18px 0 5px}
-.casebody p,.casebody li{font-size:.9rem;color:var(--muted)}
-.metrics{width:100%;border-collapse:collapse;margin:12px 0;font:12px "DM Mono",monospace}
-.metrics td,.metrics th{padding:10px;border:1px solid var(--line);text-align:left}
-.metrics th{color:var(--accent);background:var(--panel2)}
-/* Debug */
-.quizbox{max-width:760px}
-.progress{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin:20px 0}
-.progress div{height:100%;width:0;background:var(--accent);transition:.3s}
-.option{
- display:block;width:100%;text-align:left;padding:13px 15px;margin:9px 0;
- background:var(--panel);color:var(--text);border:1px solid var(--line);
- border-radius:9px;cursor:pointer;
+.flow-line:nth-child(1){top:20%;animation-delay:0s}
+.flow-line:nth-child(2){top:45%;animation-delay:2s}
+.flow-line:nth-child(3){top:72%;animation-delay:4s}
+@keyframes flowline {to{left:110%}}
+
+@media(max-width:950px) {
+  .hero-grid {grid-template-columns:1fr 1fr;gap:15px}
+  .arch-flow {grid-template-columns:repeat(4,1fr)}
+  .arch-node:after {display:none}
+  .skills-grid {grid-template-columns:repeat(2,1fr)}
 }
-.option:hover:not(:disabled){border-color:var(--accent)}
-.feedback{color:var(--accent);min-height:28px}
-footer{padding:35px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font:11px "DM Mono",monospace}
-.reveal{animation:rise .6s both}
-@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@media(max-width:760px){
- .navlinks{gap:10px;overflow:auto}
- .navlinks a{font-size:9px}
- .grid,.skillgroups{grid-template-columns:1fr}
- .journey{grid-template-columns:repeat(2,1fr)}
- .hero{padding:75px 0 55px}
- section{padding:55px 0}
+@media(max-width:700px) {
+  section {padding:70px 0}
+  .container {width:min(100% - 28px,1120px)}
+  .nav-links {
+    display:none;position:absolute;top:70px;left:0;right:0;
+    padding:20px;background:var(--surface);
+    border-bottom:1px solid var(--border);
+    flex-direction:column;align-items:flex-start;gap:18px;
+  }
+  .nav-links.open {display:flex}
+  .menu-btn {display:block}
+  .hero {padding:120px 0 50px;min-height:auto}
+  .hero-grid {grid-template-columns:1fr}
+  .hero-visual {min-height:320px;transform:scale(.9)}
+  .hero h1 {font-size:clamp(2.7rem,12vw,4rem)}
+  .arch-shell {padding:13px}
+  .arch-top {align-items:flex-start;flex-direction:column}
+  .arch-flow {display:none}
+  .mobile-flow {display:grid;gap:8px}
+  .mobile-node {
+    display:flex;align-items:center;gap:12px;text-align:left;
+    padding:13px;background:var(--surface2);
+    border:1px solid var(--border);border-radius:9px;
+    color:var(--text);cursor:pointer;
+  }
+  .mobile-node.active {border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--surface2))}
+  .mobile-node .arch-icon {font-size:21px}
+  .mobile-node strong {font-size:12px}
+  .mobile-node small {display:block;color:var(--muted);font:10px "DM Mono",monospace}
+  .arch-detail {grid-template-columns:1fr}
+  .console-grid,.about-grid {grid-template-columns:1fr}
+  .skills-grid,.case-grid {grid-template-columns:1fr}
+  .contact-box {padding:28px 17px}
+  .metrics {grid-template-columns:repeat(3,1fr)}
+  .metric strong {font-size:15px}
+  .float-label {font-size:10px;padding:8px}
+  .hero-orbit {width:280px;height:280px}
 }
-@media(max-width:430px){
- .navlinks a:nth-child(2),.navlinks a:nth-child(4){display:none}
- .stats{gap:7px}
- .stat{padding:13px 5px}
- .stat strong{font-size:1.4rem}
- .stat span{font-size:9px}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .reveal {opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
 
-<nav>
- <div class="wrap navinner">
-  <a class="logo" href="#home">NIKHIL<span>.API</span></a>
-  <div class="navlinks">
-   <a href="#journey">Journey</a>
-   <a href="#skills">Skills</a>
-   <a href="#experience">Experience</a>
-   <a href="#cases">Case Studies</a>
-   <a href="#contact">Contact</a>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#home">NK<span>.</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#architecture">Architecture</a>
+      <a href="#console">API Simulator</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☼</button>
+      <button class="icon-btn menu-btn" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
   </div>
-  <button class="theme" id="theme" aria-label="Toggle color theme">☼</button>
- </div>
 </nav>
 
 <main>
+
+<!-- HERO -->
 <section class="hero" id="home">
- <div class="flowbg" aria-hidden="true">
-  <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
-   <path class="flowline" d="M0 160 C220 160 220 320 430 320 S700 160 900 160 S1080 320 1200 320"/>
-   <path class="flowline blue" d="M0 420 C220 420 270 240 480 240 S720 440 920 440 S1080 250 1200 250"/>
-   <path class="flowline" d="M100 0 C100 150 300 150 300 300 S500 480 700 480"/>
-   <circle class="packet" r="4">
-    <animateMotion dur="8s" repeatCount="indefinite" path="M0 160 C220 160 220 320 430 320 S700 160 900 160 S1080 320 1200 320"/>
-   </circle>
-   <circle class="packet" r="4">
-    <animateMotion dur="10s" repeatCount="indefinite" path="M0 420 C220 420 270 240 480 240 S720 440 920 440 S1080 250 1200 250"/>
-   </circle>
-   <circle cx="300" cy="320" r="9" fill="none" stroke="var(--accent)" class="pulse"/>
-   <circle cx="700" cy="240" r="9" fill="none" stroke="var(--accent2)" class="pulse"/>
-   <circle cx="920" cy="440" r="9" fill="none" stroke="var(--accent)" class="pulse"/>
-  </svg>
- </div>
+  <div class="network-bg"><canvas id="networkCanvas"></canvas></div>
+  <div class="flow-decoration"><div class="flow-line"></div><div class="flow-line"></div><div class="flow-line"></div></div>
 
- <div class="wrap flowcontent">
-  <div class="eyebrow">API SUPPORT · INTEGRATIONS · ENGINEERING</div>
-  <h1>Nikhil <span class="gradient">Bollavathri</span></h1>
-  <div class="roles" id="roles">Production API Troubleshooting</div>
-  <p>
-   I troubleshoot enterprise API integrations, investigate production
-   issues across gateway, application, and database layers, and work
-   with Engineering teams to deliver reliable solutions.
-  </p>
-  <div class="actions">
-   <a class="btn primary" href="#cases">Explore my investigations ↓</a>
-   <a class="btn" href="#contact">Get in touch ↗</a>
+  <div class="container hero-grid">
+    <div>
+      <div class="tag"><span class="dot"></span> API SUPPORT · INTEGRATION · ENGINEERING</div>
+      <h1>Understanding APIs.<br>Solving <span>Complex</span> Problems.</h1>
+      <p class="hero-copy">
+        I'm an API Support Engineer focused on production troubleshooting,
+        integrations, backend investigation and improving API reliability.
+        I work across gateways, application logs, databases and code to
+        identify issues and drive faster resolutions.
+      </p>
+      <div class="hero-actions">
+        <a href="#cases" class="btn btn-primary">Explore my work ↗</a>
+        <a href="#contact" class="btn">Get in touch</a>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">REST APIs</span>
+        <span class="tag">gRPC</span>
+        <span class="tag">SQL / PL/SQL</span>
+        <span class="tag">Python scripting</span>
+        <span class="tag">Production support</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-orbit"></div>
+      <div class="hero-core">
+        <div>
+          <strong>API → DATA</strong><br>
+          <small>REQUEST LIFECYCLE</small>
+        </div>
+      </div>
+      <div class="float-label one">↗ REST / gRPC</div>
+      <div class="float-label two">◈ API Gateway</div>
+      <div class="float-label three">▤ SQL / PL/SQL</div>
+      <div class="float-label four">⌘ Debugging</div>
+    </div>
   </div>
-  <div class="stats">
-   <div class="stat"><strong>150+</strong><span>ENTERPRISE APIs</span></div>
-   <div class="stat"><strong>~10</strong><span>VENDORS SUPPORTED DAILY</span></div>
-   <div class="stat"><strong>End-to-end</strong><span>INCIDENT OWNERSHIP</span></div>
-  </div>
- </div>
 </section>
 
-<section id="journey">
- <div class="wrap">
-  <div class="section-label">01 / REQUEST LIFECYCLE</div>
-  <h2>Follow an API request</h2>
-  <p class="sub">Explore how I trace an API request across different system layers during an investigation.</p>
-  <div class="journey">
-   <button class="node active" data-node="0"><span class="symbol">🌐</span><strong>Vendor</strong><small>REQUEST</small></button>
-   <button class="node" data-node="1"><span class="symbol">🔀</span><strong>API Gateway</strong><small>GRAVITEE</small></button>
-   <button class="node" data-node="2"><span class="symbol">⚙️</span><strong>Application</strong><small>NEW RELIC</small></button>
-   <button class="node" data-node="3"><span class="symbol">🗄️</span><strong>Database</strong><small>SQL / PL/SQL</small></button>
+<!-- ARCHITECTURE -->
+<section class="architecture" id="architecture">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="eyebrow">01 / SYSTEM ARCHITECTURE</div>
+      <h2>Follow the journey of an API request.</h2>
+      <p class="section-subtitle">
+        Explore how a request travels through a typical backend architecture.
+        Select any component to understand its role, common failure points,
+        and the technologies involved.
+      </p>
+    </div>
+
+    <div class="card arch-shell reveal">
+      <div class="arch-top">
+        <div>
+          <strong>API REQUEST PIPELINE</strong>
+          <div class="muted" style="font-size:11px">Interactive architecture explorer</div>
+        </div>
+        <div class="arch-status"><span class="dot"></span> SYSTEM FLOW / SIMULATED</div>
+      </div>
+
+      <div class="arch-flow" id="desktopFlow"></div>
+      <div class="mobile-flow" id="mobileFlow"></div>
+
+      <div class="arch-detail" aria-live="polite">
+        <div>
+          <div class="eyebrow">SELECTED COMPONENT</div>
+          <h3 id="stageTitle">Client / API Consumer</h3>
+          <p id="stageDescription"></p>
+          <div class="arch-meta" id="stageTech"></div>
+        </div>
+        <div>
+          <div class="eyebrow">WHAT CAN GO WRONG?</div>
+          <p id="stageIssues"></p>
+          <div class="arch-meta" id="stageSkills"></div>
+        </div>
+      </div>
+
+      <div class="arch-controls">
+        <button class="btn btn-primary btn-small" id="playFlow">▶ Animate request</button>
+        <button class="btn btn-small" id="responseFlow">↩ Show response</button>
+        <button class="btn btn-small" id="resetFlow">↺ Reset</button>
+      </div>
+      <div class="packet-track"><div class="packet-progress" id="packetProgress"></div></div>
+      <div class="arch-explanation" id="flowMessage" aria-live="polite">
+        Select a component or start the request animation to explore the flow.
+      </div>
+    </div>
   </div>
-  <div class="detail" id="journeyDetail" aria-live="polite">
-   <strong>Vendor / Client</strong><br>
-   Reproduce the exact API request using Postman. Inspect the endpoint, headers, authentication, parameters, and response.
-  </div>
-  <div class="actions">
-   <button class="btn primary" id="playFlow">▶ Animate request flow</button>
-  </div>
- </div>
 </section>
 
+<!-- API SIMULATOR -->
+<section id="console">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="eyebrow">02 / HANDS-ON EXPLORATION</div>
+      <h2>Simulate an API request.</h2>
+      <p class="section-subtitle">
+        Change the endpoint and scenario to see how common API responses
+        behave. This is a front-end simulation, not a live backend connection.
+      </p>
+    </div>
+
+    <div class="console-grid reveal">
+      <div class="card console-panel">
+        <div class="panel-title">
+          <h3>Request configuration</h3>
+          <span class="tag">REQUEST</span>
+        </div>
+
+        <label class="field-label" for="method">HTTP METHOD</label>
+        <div class="request-line">
+          <select id="method">
+            <option>GET</option><option>POST</option><option>PUT</option><option>DELETE</option>
+          </select>
+          <input id="endpoint" value="/api/v1/properties" aria-label="API endpoint">
+        </div>
+
+        <label class="field-label" for="scenario">SIMULATION SCENARIO</label>
+        <select id="scenario">
+          <option value="success">Successful request (200)</option>
+          <option value="cache">Cache hit (200)</option>
+          <option value="429">Rate limit exceeded (429)</option>
+          <option value="500">Internal server error (500)</option>
+          <option value="504">Gateway timeout (504)</option>
+        </select>
+
+        <label class="field-label">REQUEST HEADERS</label>
+        <div class="code-window">{
+  "Content-Type": "application/json",
+  "Authorization": "Bearer ••••••••"
+}</div>
+
+        <button class="btn btn-primary" style="width:100%;margin-top:18px" id="sendRequest">
+          ▶ Send simulated request
+        </button>
+      </div>
+
+      <div class="card console-panel console-output">
+        <div class="panel-title">
+          <h3>Response inspector</h3>
+          <span class="tag">RESPONSE</span>
+        </div>
+
+        <div class="response-head">
+          <strong>Response status</strong>
+          <span class="status-pill" id="responseStatus">READY</span>
+        </div>
+
+        <div class="metrics">
+          <div class="metric"><small>HTTP STATUS</small><strong id="statusMetric">—</strong></div>
+          <div class="metric"><small>RESPONSE TIME</small><strong id="timeMetric">—</strong></div>
+          <div class="metric"><small>DATA SIZE</small><strong id="sizeMetric">—</strong></div>
+        </div>
+
+        <div>
+          <label class="field-label">JSON RESPONSE BODY</label>
+          <div class="code-window" id="responseBody">{
+  "message": "Waiting for request..."
+}</div>
+        </div>
+
+        <div>
+          <label class="field-label">REQUEST TRACE</label>
+          <div class="console-log" id="requestTrace">
+            <div>Ready to send a simulated API request.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
 <section id="skills">
- <div class="wrap">
-  <div class="section-label">02 / TECHNICAL TOOLBOX</div>
-  <h2>What I work with</h2>
-  <p class="sub">Technologies and tools used in API troubleshooting, integration support, application investigation, and automation.</p>
-  <div class="skillgroups">
-   <div class="card">
-    <h3>API & Integration</h3>
-    <p>REST APIs, gRPC, JSON, API integrations, authentication, rate limiting, request and response analysis.</p>
-    <div class="tags"><span class="tag">REST</span><span class="tag">gRPC</span><span class="tag">JSON</span><span class="tag">Postman</span></div>
-   </div>
-   <div class="card">
-    <h3>Monitoring & Debugging</h3>
-    <p>API gateway investigation, application traces, production logs, error analysis, and root cause investigation.</p>
-    <div class="tags"><span class="tag">Gravitee</span><span class="tag">New Relic</span><span class="tag">Server Logs</span></div>
-   </div>
-   <div class="card">
-    <h3>Database & Data</h3>
-    <p>Backend data validation, SQL queries, PL/SQL, database investigation, and data discrepancy analysis.</p>
-    <div class="tags"><span class="tag">SQL</span><span class="tag">PL/SQL</span></div>
-   </div>
-   <div class="card">
-    <h3>Programming & Automation</h3>
-    <p>Python scripting for automating repetitive tasks and improving operational efficiency.</p>
-    <div class="tags"><span class="tag">Python Scripting</span><span class="tag">Automation</span></div>
-   </div>
-   <div class="card">
-    <h3>Development Tools</h3>
-    <p>Application code tracing, understanding execution flow, version control, and AI-assisted development.</p>
-    <div class="tags"><span class="tag">Git</span><span class="tag">Cursor IDE</span><span class="tag">Codex</span></div>
-   </div>
-   <div class="card">
-    <h3>Collaboration & Delivery</h3>
-    <p>Incident ownership, defect reporting, release validation, documentation, and cross-functional coordination.</p>
-    <div class="tags"><span class="tag">Jira</span><span class="tag">Engineering</span><span class="tag">Product</span></div>
-   </div>
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="eyebrow">03 / TECHNICAL TOOLKIT</div>
+      <h2>Technologies & capabilities.</h2>
+      <p class="section-subtitle">
+        A combination of API support, debugging, database investigation,
+        scripting and engineering collaboration.
+      </p>
+    </div>
+
+    <div class="grid skills-grid">
+      <div class="card skill-card reveal">
+        <h3>API & Integrations</h3>
+        <div class="skill-list">
+          <span>REST APIs</span><span>gRPC</span><span>HTTP</span>
+          <span>JSON</span><span>API Integration</span><span>Postman</span>
+          <span>Gravitee API Gateway</span>
+        </div>
+      </div>
+      <div class="card skill-card reveal">
+        <h3>Database & Backend</h3>
+        <div class="skill-list">
+          <span>SQL</span><span>PL/SQL</span><span>Query Analysis</span>
+          <span>Data Validation</span><span>Application Logs</span>
+          <span>Backend Troubleshooting</span>
+        </div>
+      </div>
+      <div class="card skill-card reveal">
+        <h3>Monitoring & Debugging</h3>
+        <div class="skill-list">
+          <span>New Relic</span><span>Gateway Logs</span>
+          <span>Production Support</span><span>HTTP Status Codes</span>
+          <span>Root Cause Analysis</span><span>Jira</span>
+        </div>
+      </div>
+      <div class="card skill-card reveal">
+        <h3>Programming & Tools</h3>
+        <div class="skill-list">
+          <span>Python scripting</span><span>Git</span>
+          <span>Cursor IDE</span><span>Code Tracing</span>
+          <span>Debugging</span><span>Pull Requests</span>
+        </div>
+      </div>
+      <div class="card skill-card reveal">
+        <h3>Engineering Practices</h3>
+        <div class="skill-list">
+          <span>Issue Reproduction</span><span>Regression Testing</span>
+          <span>Release Validation</span><span>Defect Reporting</span>
+          <span>Cross-team Collaboration</span>
+        </div>
+      </div>
+      <div class="card skill-card reveal">
+        <h3>Operational Skills</h3>
+        <div class="skill-list">
+          <span>Incident Management</span><span>Vendor Coordination</span>
+          <span>Customer Communication</span><span>Documentation</span>
+          <span>Production Investigation</span>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience">
- <div class="wrap">
-  <div class="section-label">03 / PROFESSIONAL EXPERIENCE</div>
-  <h2>Where I've worked</h2>
-  <div class="timeline">
-   <article class="card">
-    <div class="jobhead">
-     <div><h3>API Support Engineer</h3><span class="muted">Entrata</span></div>
-     <small>JUNE 2025 – PRESENT</small>
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="eyebrow">04 / PROFESSIONAL EXPERIENCE</div>
+      <h2>Experience that connects support and engineering.</h2>
+      <p class="section-subtitle">
+        Working across customer-facing technical support, production systems,
+        APIs and engineering teams.
+      </p>
     </div>
-    <ul>
-     <li>Support 150+ enterprise APIs and troubleshoot integrations for approximately 10 third-party vendors daily.</li>
-     <li>Own production incidents from initial investigation through root cause identification and resolution.</li>
-     <li>Reproduce API failures using Postman and investigate authentication, timeouts, latency, rate limiting, and data-related issues.</li>
-     <li>Analyze API gateway logs using Gravitee and investigate application errors and traces using New Relic.</li>
-     <li>Use SQL and PL/SQL to validate backend records and investigate data discrepancies.</li>
-     <li>Trace application issues through logs and code using AI-assisted development tools where appropriate.</li>
-     <li>Implement and ship minor code fixes to accelerate issue resolution.</li>
-     <li>Collaborate with Engineering and Product teams to report defects, recommend improvements, and verify fixes.</li>
-     <li>Participate in release validation and vendor feature-request discussions.</li>
-     <li>Maintain technical documentation and support knowledge sharing with team members.</li>
-    </ul>
-   </article>
 
-   <article class="card">
-    <div class="jobhead">
-     <div><h3>Analyst – Technical Support</h3><span class="muted">Teleperformance Global Services · Hyderabad</span></div>
-     <small>AUG 2022 – DEC 2024</small>
-    </div>
-    <ul>
-     <li>Investigated customer-reported application issues using backend troubleshooting techniques and SQL.</li>
-     <li>Analyzed application logs and validated backend data to identify discrepancies.</li>
-     <li>Created and tracked Jira tickets with reproduction steps and supporting evidence.</li>
-     <li>Collaborated with cross-functional teams to investigate production incidents and document workarounds.</li>
-    </ul>
-   </article>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="card experience-card">
+          <div class="experience-head">
+            <div>
+              <h3>API Support Engineer</h3>
+              <div class="muted">Entrata</div>
+            </div>
+            <small>JUNE 2025 — PRESENT</small>
+          </div>
+          <ul>
+            <li>Support 150+ enterprise APIs and coordinate with approximately 10 third-party vendors daily to investigate integration and production issues.</li>
+            <li>Reproduce API issues using Postman and investigate gateway behaviour through Gravitee logs, request headers and rate-limit information.</li>
+            <li>Use New Relic, application logs, SQL and PL/SQL to investigate timeouts, data discrepancies and backend performance concerns.</li>
+            <li>Collaborate with Engineering and Product teams to identify root causes, report defects and validate fixes and releases.</li>
+            <li>Use Cursor IDE to understand application code flow and investigate code-level issues.</li>
+            <li>Implement and contribute minor fixes, including null-handling improvements, and raise pull requests for Engineering review.</li>
+            <li>Use Python scripting to automate repetitive tasks and improve operational efficiency.</li>
+          </ul>
+          <div class="case-tags">
+            <span>REST APIs</span><span>Gravitee</span><span>New Relic</span>
+            <span>SQL / PL/SQL</span><span>Postman</span><span>Python</span>
+          </div>
+        </div>
+      </div>
 
-   <article class="card">
-    <div class="jobhead">
-     <div><h3>B.Tech – Mechanical Engineering</h3><span class="muted">TKR College of Engineering & Technology</span></div>
-     <small>AUGUST 2021</small>
+      <div class="timeline-item reveal">
+        <span class="timeline-dot"></span>
+        <div class="card experience-card">
+          <div class="experience-head">
+            <div>
+              <h3>Technical Support</h3>
+              <div class="muted">Teleperformance Global Services · Hyderabad</div>
+            </div>
+            <small>AUG 2022 — DEC 2024</small>
+          </div>
+          <ul>
+            <li>Provided technical support by investigating application issues and troubleshooting reported problems.</li>
+            <li>Used SQL queries and application logs to support issue analysis and data validation.</li>
+            <li>Worked with Jira to track issues, document findings and coordinate resolution.</li>
+            <li>Communicated technical findings and resolution updates to relevant stakeholders.</li>
+          </ul>
+          <div class="case-tags">
+            <span>Technical Support</span><span>SQL</span><span>Logs</span><span>Jira</span>
+          </div>
+        </div>
+      </div>
     </div>
-   </article>
   </div>
- </div>
 </section>
 
+<!-- CASE STUDIES -->
 <section id="cases">
- <div class="wrap">
-  <div class="section-label">04 / TECHNICAL CASE STUDIES</div>
-  <h2>How I investigate and resolve issues</h2>
-  <p class="sub">
-   Anonymized examples of production troubleshooting, gateway analysis,
-   performance investigation, and application-level fixes.
-   Select a case study to explore the investigation.
-  </p>
-
-  <div class="timeline">
-
-   <details class="card case">
-    <summary>
-     <div><h3>01. API returning 429 despite available quota</h3><span>GATEWAY · RATE LIMITING · SPIKE ARREST</span></div>
-    </summary>
-    <div class="casebody">
-     <h4>Problem</h4>
-     <p>A vendor reported intermittent HTTP 429 Too Many Requests responses even though the customer still had API quota remaining.</p>
-
-     <h4>Troubleshooting</h4>
-     <ul>
-      <li>Checked gateway logs to identify the exact error and rejection point.</li>
-      <li>Verified the customer's remaining quota and rate-limit headers.</li>
-      <li>Compared successful and failed requests to identify patterns.</li>
-      <li>Investigated the gateway's rate-limiting configuration.</li>
-      <li>Identified a gateway-level Spike Arrest configuration of 200 milliseconds, allowing approximately five requests per second.</li>
-      <li>Distinguished normal quota exhaustion from gateway-level burst throttling.</li>
-     </ul>
-
-     <h4>Resolution & Outcome</h4>
-     <p>Identified that requests were being rejected by gateway-level throttling rather than customer quota exhaustion. This explained why customers received 429 responses despite having remaining quota. The findings provided evidence for the gateway team to review throttling configuration and customer-facing error messaging.</p>
-
-     <h4>Tools used</h4>
-     <div class="tags"><span class="tag">Gravitee</span><span class="tag">Gateway Logs</span><span class="tag">Postman</span></div>
-
-     <h4>Technical concepts</h4>
-     <p>HTTP 429, rate limiting, Spike Arrest, gateway configuration, request throttling.</p>
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="eyebrow">05 / TROUBLESHOOTING IN PRACTICE</div>
+      <h2>Real-world technical investigations.</h2>
+      <p class="section-subtitle">
+        Examples of how I approach production issues, compare evidence,
+        investigate root causes and collaborate on resolutions.
+      </p>
     </div>
-   </details>
 
-   <details class="card case">
-    <summary>
-     <div><h3>02. API timeout caused by long-running backend transaction</h3><span>TIMEOUT · BACKEND TRANSACTION · LOG ANALYSIS</span></div>
-    </summary>
-    <div class="casebody">
-     <h4>Problem</h4>
-     <p>A vendor reported API timeouts for a particular property, while requests for other properties were working successfully. Investigation identified a backend transaction taking approximately 20 minutes, exceeding the expected processing time.</p>
+    <div class="grid case-grid">
 
-     <h4>Troubleshooting</h4>
-     <ul>
-      <li>Checked gateway logs to confirm the timeout.</li>
-      <li>Identified the affected property and compared its requests with successful property requests.</li>
-      <li>Traced the request through application logs.</li>
-      <li>Investigated the backend transaction and its execution time.</li>
-      <li>Checked whether the issue was related to data volume, processing logic, or a specific property configuration.</li>
-      <li>Shared the findings with Engineering for deeper investigation.</li>
-     </ul>
+      <article class="card case-card reveal">
+        <div class="case-number">CASE 01 / API GATEWAY</div>
+        <h3>HTTP 429 despite remaining API quota</h3>
+        <p>
+          An API vendor received intermittent rate-limit errors even though
+          their available quota had not been exhausted.
+        </p>
+        <details>
+          <summary>Explore investigation →</summary>
+          <div class="case-detail">
+            <p><strong>Investigation:</strong> Compared successful and failed requests, checked gateway logs and inspected remaining-quota and rate-limit headers.</p>
+            <p><strong>Finding:</strong> Identified a gateway-level Spike Arrest configuration of 200 ms, equivalent to approximately five requests per second. This was throttling requests independently of the remaining quota.</p>
+            <p><strong>Next step:</strong> The findings could be shared with the gateway team to review the configuration and error messaging.</p>
+            <p><strong>Tools:</strong> Gravitee, gateway logs, Postman.</p>
+          </div>
+        </details>
+        <div class="case-tags"><span>HTTP 429</span><span>Spike Arrest</span><span>Rate Limiting</span></div>
+      </article>
 
-     <h4>Investigation Outcome</h4>
-     <p>Isolated a long-running backend transaction of approximately 20 minutes as a key finding associated with the affected property. The evidence helped narrow the investigation toward backend processing rather than treating the issue as a general API or vendor connectivity failure. Further remediation details were not included in this case study.</p>
+      <article class="card case-card reveal">
+        <div class="case-number">CASE 02 / BACKEND PERFORMANCE</div>
+        <h3>API timeout affecting a specific property</h3>
+        <p>
+          API requests timed out for one property while requests for other
+          properties continued to work.
+        </p>
+        <details>
+          <summary>Explore investigation →</summary>
+          <div class="case-detail">
+            <p><strong>Investigation:</strong> Compared affected and successful properties, examined gateway logs, traced application logs and investigated transaction execution time.</p>
+            <p><strong>Finding:</strong> The backend transaction for the affected property was taking approximately 20 minutes. I investigated data volume, execution logic and property-specific configuration.</p>
+            <p><strong>Collaboration:</strong> Shared the investigation findings with Engineering for further analysis.</p>
+            <p><strong>Tools:</strong> Gravitee, New Relic, application logs, SQL, Postman.</p>
+          </div>
+        </details>
+        <div class="case-tags"><span>API Timeout</span><span>SQL</span><span>Application Logs</span></div>
+      </article>
 
-     <h4>Tools used</h4>
-   
+      <article class="card case-card reveal">
+        <div class="case-number">CASE 03 / PERFORMANCE ANALYSIS</div>
+        <h3>Investigating API timeouts with lower memory usage</h3>
+        <p>
+          A timed-out request showed lower memory consumption than a
+          successful request, making the performance issue less obvious.
+        </p>
+        <details>
+          <summary>Explore investigation →</summary>
+          <div class="case-detail">
+            <p><strong>Evidence comparison:</strong></p>
+            <p>Database duration: 528 ms for the timed-out request versus 187 ms for the successful request.</p>
+            <p>Memory consumed: 17 MB versus 48 MB.</p>
+            <p>PHP peak memory: 37 MB versus 110 MB.</p>
+            <p><strong>Finding:</strong> The timed-out request had approximately 2.8 times the database duration, despite using less memory. The database timing alone did not establish the complete cause of the timeout.</p>
+            <p><strong>Further investigation:</strong> Total request duration, downstream calls, application processing and gateway timeout configuration need to be considered.</p>
+            <p><strong>Tools:</strong> Gateway logs, New Relic, SQL, application logs.</p>
+          </div>
+        </details>
+        <div class="case-tags"><span>Performance</span><span>Database Duration</span><span>New Relic</span></div>
+      </article>
+
+      <article class="card case-card reveal">
+        <div class="case-number">CASE 04 / CODE-LEVEL INVESTIGATION</div>
+        <h3>HTTP 500 caused by unexpected null handling</h3>
+        <p>
+          An API returned an internal server error when a particular field
+          was empty instead of containing a value.
+        </p>
+        <details>
+          <summary>Explore investigation →</summary>
+          <div class="case-detail">
+            <p><strong>Investigation:</strong> Reproduced the issue using Postman, checked gateway and application logs, and traced the relevant code flow using Cursor IDE.</p>
+            <p><strong>Finding:</strong> A variable or function returned null where the application expected a default value of zero.</p>
+            <p><strong>Code contribution:</strong> Implemented handling to default the missing value to zero, then tested both populated and missing-value scenarios.</p>
+            <p><strong>Outcome:</strong> Raised a pull request for Engineering review. This describes the submitted fix, not a confirmed merge or production deployment.</p>
+            <p><strong>Tools:</strong> Cursor IDE, Postman, application logs, Git, Jira.</p>
+          </div>
+        </details>
+        <div class="case-tags"><span>HTTP 500</span><span>Null Handling</span><span>Code Tracing</span><span>Git</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-intro reveal">
+      <div class="eyebrow">06 / ABOUT ME</div>
+      <h2>Support mindset. Engineering approach.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="card about-card reveal">
+        <h3>My approach</h3>
+        <p>
+          I enjoy understanding how systems work behind the scenes.
+          My experience in API support has helped me investigate issues
+          across multiple layers — from request headers and gateway policies
+          to application logic and database behaviour.
+        </p>
+        <p>
+          I believe effective troubleshooting is more than identifying an
+          error message. It involves reproducing the issue, collecting
+          evidence, comparing expected and actual behaviour, understanding
+          the code path and working with the right teams to improve reliability.
+        </p>
+        <p>
+          I also use Python scripting to automate repetitive tasks and
+          contribute minor code fixes when an issue can be addressed
+          through a targeted engineering change.
+        </p>
+      </div>
+      <div class="card about-card reveal">
+        <h3>Education</h3>
+        <div class="education-item">
+          <strong>Bachelor of Technology — Mechanical Engineering</strong>
+          <small>TKR College of Engineering & Technology · August 2021</small>
+        </div>
+        <h3 style="margin-top:25px">Career interests</h3>
+        <div class="skill-list">
+          <span>API Support Engineering</span>
+          <span>Technical Support Engineering</span>
+          <span>Integration Engineering</span>
+          <span>Software Engineering</span>
+          <span>Backend Troubleshooting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="card contact-box reveal">
+      <div class="eyebrow">07 / LET'S CONNECT</div>
+      <h2>Let's solve something interesting.</h2>
+      <p>
+        Interested in API integrations, technical troubleshooting,
+        backend systems or engineering opportunities? Let's connect.
+      </p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:nikhilkumar7578@gmail.com">✉ Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/nikhil-bollavathri" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/nikhil7578" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <button class="btn" id="copyEmail">Copy email</button>
+      </div>
+      <p id="copyMessage" class="muted" aria-live="polite" style="font-size:12px"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Nikhil. Built with curiosity and code.</span>
+    <span class="mono">REQUEST → PROCESS → RESPONSE</span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   ARCHITECTURE DATA
+========================================================= */
+
+const stages = [
+  {
+    name:"Client / API Consumer",
+    icon:"💻",
+    short:"Request origin",
+    description:"An application, integration or external consumer sends an API request containing an endpoint, HTTP method, headers and optionally a request payload.",
+    issues:"Invalid payloads, missing headers, expired tokens, incorrect endpoints and client-side request configuration.",
+    tech:["REST","gRPC","HTTP","JSON"],
+    skills:["Request validation","Postman","API debugging"]
+  },
+  {
+    name:"API Gateway",
+    icon:"🛡️",
+    short:"Security & routing",
+    description:"The API gateway acts as an entry point. It can validate authentication, enforce policies, apply rate limits, inspect requests and route traffic to backend services.",
+    issues:"HTTP 401/403, HTTP 429, invalid gateway policies, Spike Arrest throttling, routing errors and authentication failures.",
+    tech:["Gravitee","Authentication","Rate limiting","Routing"],
+    skills:["Gateway logs","HTTP headers","Policy investigation"]
+  },
+  {
+    name:"Load Balancer",
+    icon:"⚖️",
+    short:"Traffic distribution",
+    description:"The load balancer distributes incoming traffic across available application instances based on configured routing and health checks.",
+    issues:"Unhealthy instances, uneven traffic distribution, connection failures and backend availability problems.",
+    tech:["Load balancing","Health checks","Routing"],
+    skills:["Availability","Request distribution","Infrastructure troubleshooting"]
+  },
+  {
+    name:"Application Worker Pool",
+    icon:"⚙️",
+    short:"Business logic",
+    description:"An available worker or application process handles the request, executes business logic and coordinates downstream operations.",
+    issues:"Worker saturation, long-running transactions, application exceptions, concurrency issues and processing delays.",
+    tech:["Application services","Workers","Business logic"],
+    skills:["Application logs","Code tracing","New Relic"]
+  },
+  {
+    name:"Cache",
+    icon:"⚡",
+    short:"Fast data access",
+    description:"The application may check a cache for previously stored data. A cache hit can avoid an additional database query. A cache miss may trigger a database lookup.",
+    issues:"Stale cache entries, cache misses, invalidation problems and inconsistent cached data.",
+    tech:["Cache","Cache hit","Cache miss"],
+    skills:["Performance analysis","Data consistency"]
+  },
+  {
+    name:"Database",
+    icon:"🗄️",
+    short:"Persistent storage",
+    description:"The application reads or updates persistent data through database queries and transactions. The results are passed back to the application layer.",
+    issues:"Slow queries, long-running transactions, data discrepancies, locks, missing records and database connectivity problems.",
+    tech:["SQL","PL/SQL","Database queries"],
+    skills:["Query analysis","Data validation","Performance investigation"]
+  },
+  {
+    name:"Client Response",
+    icon:"📨",
+    short:"Response delivery",
+    description:"The application creates a response and returns it through the gateway to the API consumer. The response includes an HTTP status, headers and potentially a JSON body.",
+    issues:"HTTP 4xx/5xx responses, gateway timeouts, unexpected response structures and incomplete data.",
+    tech:["HTTP response","JSON","Status codes"],
+    skills:["Postman","Response validation","Root cause analysis"]
+  }
+];
+
+const desktopFlow = document.getElementById("desktopFlow");
+const mobileFlow = document.getElementById("mobileFlow");
+
+function renderStages() {
+  stages.forEach((stage,index)=>{
+    const button = document.createElement("button");
+    button.className = "arch-node";
+    button.innerHTML = `
+      <span class="arch-icon">${stage.icon}</span>
+      <strong>${stage.name}</strong>
+      <small>${stage.short}</small>`;
+    button.addEventListener("click",()=>selectStage(index));
+    desktopFlow.appendChild(button);
+
+    const mobile = document.createElement("button");
+    mobile.className = "mobile-node";
+    mobile.innerHTML = `
+      <span class="arch-icon">${stage.icon}</span>
+      <span><strong>${stage.name}</strong><small>${stage.short}</small></span>`;
+    mobile.addEventListener("click",()=>selectStage(index));
+    mobileFlow.appendChild(mobile);
+  });
+}
+
+function selectStage(index) {
+  currentStage = index;
+  document.querySelectorAll(".arch-node,.mobile-node").forEach((node,i)=>{
+    node.classList.toggle("active",i===index);
+  });
+
+  const stage = stages[index];
+  document.getElementById("stageTitle").textContent = stage.name;
+  document.getElementById("stageDescription").textContent = stage.description;
+  document.getElementById("stageIssues").textContent = stage.issues;
+  document.getElementById("stageTech").innerHTML =
+    stage.tech.map(t=>`<span>${t}</span>`).join("");
+  document.getElementById("stageSkills").innerHTML =
+    stage.skills.map(t=>`<span>${t}</span>`).join("");
+
+  document.getElementById("packetProgress").style.width =
+    ((index+1)/stages.length*100)+"%";
+}
+
+let currentStage = 0;
+let animationTimer = null;
+let responseMode = false;
+
+renderStages();
+selectStage(0);
+
+function stopAnimation() {
+  if(animationTimer) clearInterval(animationTimer);
+  animationTimer = null;
+}
+
+function startFlow(reverse=false) {
+  stopAnimation();
+  responseMode = reverse;
+  let index = reverse ? stages.length-1 : 0;
+
+  selectStage(index);
+  document.getElementById("flowMessage").textContent =
+    reverse ? "Response is travelling back toward the client..." :
+    "API request initiated. Following the request through the system...";
+
+  animationTimer = setInterval(()=>{
+    index += reverse ? -1 : 1;
+
+    if(index < 0 || index >= stages.length) {
+      stopAnimation();
+      document.getElementById("flowMessage").textContent =
+        reverse ? "Response delivered to the client successfully." :
+        "Request completed its journey through the architecture.";
+      return;
+    }
+
+    selectStage(index);
+    document.getElementById("flowMessage").textContent =
+      reverse
+      ? "Response passing through: "+stages[index].name
+      : "Request reaching: "+stages[index].name;
+  },1100);
+}
+
+document.getElementById("playFlow").addEventListener("click",()=>{
+  startFlow(false);
+});
+document.getElementById("responseFlow").addEventListener("click",()=>{
+  startFlow(true);
+});
+document.getElementById("resetFlow").addEventListener("click",()=>{
+  stopAnimation();
+  selectStage(0);
+  document.getElementById("flowMessage").textContent =
+    "Flow reset. Select a component or animate the request.";
+});
+
+/* =========================================================
+   API SIMULATOR
+========================================================= */
+
+const scenarios = {
+  success:{
+    status:200,time:142,size:"1.2 KB",label:"200 OK",
+    body:{
+      "success":true,
+      "message":"Request processed successfully",
+      "data":{"property_id":1024,"name":"Sample Property"},
+      "timestamp":"2026-11-22T10:30:00Z"
+    }
+  },
+  cache:{
+    status:200,time:18,size:"1.2 KB",label:"200 OK · CACHE HIT",
+    body:{
+      "success":true,
+      "source":"cache",
+      "message":"Data retrieved from cache",
+      "data":{"property_id":1024,"name":"Sample Property"}
+    }
+  },
+  "429":{
+    status:429,time:35,size:"0.4 KB",label:"429 TOO MANY REQUESTS",
+    body:{
+      "success":false,
+      "error":"Too Many Requests",
+      "message":"Request rate limit exceeded",
+      "retry_after":5
+    }
+  },
+  "500":{
+    status:500,time:210,size:"0.5 KB",label:"500 INTERNAL SERVER ERROR",
+    body:{
+      "success":false,
+      "error":"Internal Server Error",
+      "message":"An unexpected application error occurred"
+    }
+  },
+  "504":{
+    status:504,time:5000,size:"0.3 KB",label:"504 GATEWAY TIMEOUT",
+    body:{
+      "success":false,
+      "error":"Gateway Timeout",
+      "message":"The upstream service did not respond within the configured timeout"
+    }
+  }
+};
+
+function runRequest() {
+  const scenario = document.getElementById("scenario").value;
+  const method = document.getElementById("method").value;
+  const endpoint = document.getElementById("endpoint").value.trim() || "/api/v1/properties";
+  const result = scenarios[scenario];
+
+  const status = document.getElementById("responseStatus");
+  const trace = document.getElementById("requestTrace");
+  const body = document.getElementById("responseBody");
+
+  status.className = "status-pill";
+  status.textContent = "PROCESSING";
+  body.textContent = '{\n  "message": "Processing request..."\n}';
+  trace.innerHTML = "";
+
+  const logs = [
+    ["Request initiated", "ok"],
+    ["Sending "+method+" "+endpoint, "ok"],
+    ["Request reached API gateway", "ok"],
+    ["Gateway policies evaluated", "ok"],
+    ["Routing to application service", "ok"]
+  ];
+
+  if(scenario==="cache") {
+    logs.push(["Cache lookup: HIT", "ok"]);
+  } else if(scenario==="429") {
+    logs.push(["Gateway rate-limit policy triggered", "bad"]);
+  } else if(scenario==="500") {
+    logs.push(["Application returned internal error", "bad"]);
+  } else if(scenario==="504") {
+    logs.push(["Upstream response exceeded timeout", "bad"]);
+  } else {
+    logs.push(["Application processed request", "ok"]);
+    logs.push(["Response returned to client", "ok"]);
+  }
+
+  let i=0;
+  const interval = setInterval(()=>{
+    if(i<logs.length) {
+      const line = document.createElement("div");
+      line.className = logs[i][1];
+      line.textContent = "› "+logs[i][0];
+      trace.appendChild(line);
+      i++;
+    } else {
+      clearInterval(interval);
+      showResult(result);
+    }
+  },220);
+}
+
+function showResult(result) {
+  const status = document.getElementById("responseStatus");
+  status.textContent = result.label;
+  status.className = result.status>=400?"status-pill error":"status-pill";
+
+  document.getElementById("statusMetric").textContent=result.status;
+  document.getElementById("timeMetric").textContent=result.time+" ms";
+  document.getElementById("sizeMetric").textContent=result.size;
+  document.getElementById("responseBody").textContent =
+    JSON.stringify(result.body,null,2);
+}
+
+document.getElementById("sendRequest").addEventListener("click",runRequest);
+
+/* =========================================================
+   BACKGROUND NETWORK ANIMATION
+========================================================= */
+
+const canvas = document.getElementById("networkCanvas");
+const ctx = canvas.getContext("2d");
+let particles = [];
+let canvasWidth=0,canvasHeight=0;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function resizeCanvas() {
+  const rect=canvas.getBoundingClientRect();
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  canvasWidth=rect.width;
+  canvasHeight=rect.height;
+  canvas.width=rect.width*dpr;
+  canvas.height=rect.height*dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+
+  particles=Array.from({length:Math.min(45,Math.floor(rect.width/22))},()=>({
+    x:Math.random()*canvasWidth,
+    y:Math.random()*canvasHeight,
+    vx:(Math.random()-.5)*.35,
+    vy:(Math.random()-.5)*.35,
+    radius:Math.random()*1.7+1
+  }));
+}
+
+function drawNetwork() {
+  ctx.clearRect(0,0,canvasWidth,canvasHeight);
+  const accent=getComputedStyle(document.body).getPropertyValue("--accent").trim()||"#27dfbd";
+
+  particles.forEach((p,i)=>{
+    if(!reducedMotion) {
+      p.x+=p.vx;
+      p.y+=p.vy;
+      if(p.x<0||p.x>canvasWidth)p.vx*=-1;
+      if(p.y<0||p.y>canvasHeight)p.vy*=-1;
+    }
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+    ctx.fillStyle=accent;
+    ctx.fill();
+
+    for(let j=i+1;j<particles.length;j++){
+      const q=particles[j];
+      const dx=p.x-q.x;
+      const dy=p.y-q.y;
+      const distance=Math.sqrt(dx*dx+dy*dy);
+      if(distance<110){
+        ctx.beginPath();
+        ctx.moveTo(p.x,p.y);
+        ctx.lineTo(q.x,q.y);
+        ctx.strokeStyle=accent;
+        ctx.globalAlpha=1-distance/110;
+        ctx.lineWidth=.5;
+        ctx.stroke();
+        ctx.globalAlpha=1;
+      }
+    }
+  });
+
+  if(!reducedMotion) requestAnimationFrame(drawNetwork);
+}
+
+resizeCanvas();
+drawNetwork();
+window.addEventListener("resize",resizeCanvas);
+
+/* =========================================================
+   THEME, NAVIGATION, REVEAL AND CONTACT
+========================================================= */
+
+document.getElementById("themeToggle").addEventListener("click",()=>{
+  const current=document.body.getAttribute("data-theme");
+  document.body.setAttribute("data-theme",current==="light"?"dark":"light");
+  resizeCanvas();
+  if(!reducedMotion) drawNetwork();
+});
+
+document.getElementById("menuToggle").addEventListener("click",()=>{
+  document.getElementById("navLinks").classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    document.getElementById("navLinks").classList.remove("open");
+  });
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.getElementById("copyEmail").addEventListener("click",async()=>{
+  const email="nikhilkumar7578@gmail.com";
+  const message=document.getElementById("copyMessage");
+  try {
+    await navigator.clipboard.writeText(email);
+    message.textContent="Email address copied.";
+  } catch(e) {
+    message.textContent="Please copy manually: "+email;
+  }
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
